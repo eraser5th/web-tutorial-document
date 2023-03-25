@@ -11,10 +11,10 @@ const config = {
   favicon: "img/favicon.ico",
 
   url: "https://eraser5th.github.io",
-  baseUrl: "/my-docusaurus-template/",
+  baseUrl: "/web-tutorial-document/",
 
   organizationName: "eraser5th", // Usually your GitHub org/user name.
-  projectName: "my-docusaurus-template", // Usually your repo name.
+  projectName: "web-tutorial-document", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
