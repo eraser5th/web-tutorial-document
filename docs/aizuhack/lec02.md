@@ -1,0 +1,620 @@
+---
+title: AizuHack HTML・CSS勉強会
+slideOptions:
+  theme: white
+  transition: 'fade'
+  center: false
+---
+
+# AizuHack
+# ~ HTML・CSS ~
+
+---
+
+## はじめに
+
+今日はWebフロントの基礎をやります。内容としては以下になります。
+
+- HTMLの基礎
+- CSSの基礎
+
+---
+
+## 作業環境について
+
+手元のPCでブラウザを立ち上げてもらう時があります。その際には Google ChromeかFirefoxのどちらかだと講師が助かります。
+
+---
+
+## HTML・CSSの役割
+
+HTMLはWebページの文書構造を構成する。
+
+CSSはWebページの見た目を装飾する。
+
+---
+
+### やってみよう💪
+
+百聞は一見にしかず、学校のlmsで遊んでみましょう。[リンク](https://elms.u-aizu.ac.jp)を開いてログインし、
+
+- Firefoxの場合
+  - ページ上で右クリック→要素を調査
+- Google Chromeの場合
+  - ページ上で右クリック→検証
+
+```javascript=
+<DOCTYPE!>
+<html ... >
+  <head>...</head>
+  <body ... >
+  ...
+```
+
+このようなものが表示されると思うので、`<head>...<head>` を左クリック → 右クリック → 要素を削除。
+
+これにより`<head>...<head>`内で読み込まれていたCSSが消えます。
+
+どうでしょうか？
+
+---
+
+## 今回の作業
+
+今回は、HTML・CSSを簡単に試すことができる、[codepen](https://codepen.io/)というサービスを使っていくので、データを残したい方などはまずユーザー登録などを行ってください。
+
+---
+
+## HTML 📃
+
+まずはHTMLについて説明します。内容としては、
+
+- HTMLの構造
+- 基本的なタグについて
+- classとid
+
+---
+
+### HTMLの構造
+
+以下にHTMLのおおよそ最小構成を載せます。
+
+様々なタグと呼ばれるものを階層的に記述することにより、文書構造を表現する。
+
+```htmlembedded=
+<!DOCTYPE html>
+<html>
+  <!-- <head> 内ではWebページの表示名、ロゴ、CSSの読み込みなど、設定の様なことを行う -->
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <!-- <body> 内ではWebページの構造、コンテンツを表記する -->
+  <body>
+    <h1>this is a lv.1 heading</h1>
+  </body>
+</html>
+```
+
+---
+
+### HTMLのコメント
+
+先程のHTMLに`<!-- このような -->`ものがあったと思います。これはHTMLにおけるコメントであり、見た目や動作に影響を与えません。
+
+---
+
+### 基本的な`tag`
+
+HTMLには様々な`tag`と呼ばれるものがある。
+
+ここではその中でも重要または基本的なものを取り上げる。
+
+---
+
+#### `heading` （見出し）
+
+見出しは`<h1>` ~ `<h6>`の６つがある。 [詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
+
+<iframe height="400" width="100%" width="100%" scrolling="no" title="Untitled" src="https://codepen.io/eraser5th/embed/RwQPRQQ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/RwQPRQQ">
+  Untitled</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### `image` （画像）
+
+画像は`<img>`タグを使うことによって表示できる。画像のURLは`src`属性に渡す。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+
+<iframe height="400" width="100%" width="100%" scrolling="no" title="AizuHack_HTML・CSS_image_example" src="https://codepen.io/eraser5th/embed/vYdOKwr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/vYdOKwr">
+  AizuHack_HTML・CSS_image_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### `paragraph` （段落）
+
+段落は`<p>`タグを使う。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
+
+<iframe height="400" width="100%" scrolling="no" title="HTML paragraph" src="https://codepen.io/eraser5th/embed/QWQbKWW?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/QWQbKWW">
+  HTML paragraph</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### `anchor` (リンク)
+
+リンクは`<a>`タグを使う。リンク先は`href`属性に渡す。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_anchor_example" src="https://codepen.io/eraser5th/embed/abqOmBV?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/abqOmBV">
+  AizuHack_HTML・CSS_anchor_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### `button` （ボタン）
+
+ボタンは`<button>`タグを使う。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_button_example" src="https://codepen.io/eraser5th/embed/rNJVMpz?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/rNJVMpz">
+  AizuHack_HTML・CSS_button_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### `input` （インプット）
+
+ユーザーからの入力は`<input>`タグを使う。`type`属性を変えることで様々な入力に対応できる。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_input_example" src="https://codepen.io/eraser5th/embed/MWQwjqo?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/MWQwjqo">
+  AizuHack_HTML・CSS_input_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### `division` (区間)
+
+ある区間Aと区間Bに分けたり、ページを階層構造にするためなどに使う。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
+
+classについてはこの後説明します。
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_div_example" src="https://codepen.io/eraser5th/embed/jOZPVNm?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/jOZPVNm">
+  AizuHack_HTML・CSS_div_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+### class と id
+
+HTML要素には`class`と`id`と呼ばれる属性がある。`class`は複数付与することが可能で、`id`は一つだけしか付与できない。
+
+`class`と`id`はCSSで装飾する要素を指定したり、JavaScriptから要素を取得するのに必要。
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_class-id_example" src="https://codepen.io/eraser5th/embed/eYVNxBr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/eYVNxBr">
+  AizuHack_HTML・CSS_class-id_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+## CSS 🎨
+
+CSSはHTMLのタグやid、classを選択し、スタイル（見た目）を適用する。この勉強会資料も200行程度のCSSを書いてカスタマイズしました。
+
+内容としては、
+
+- 構文
+- セレクター
+- コンビネーター
+- プロパティ
+
+---
+
+### 構文
+
+CSSでは、`セレクター`と言われるものでスタイル（見た目）を適応する要素を指定する。
+
+```css=
+/* これはコメント */
+
+/* 書き方 */
+セレクター {
+  プロパティ: 値;
+}
+
+/* 例 */
+h1 {
+  color: red;
+}
+```
+
+---
+
+### セレクター
+
+どの要素にCSSを適応するか決定するためのもの。詳しくは[こちら](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)。
+
+---
+
+#### type セレクター
+
+適応したい`tag`を指定する。
+
+<iframe height="400" width="100%" scrolling="no" title="Untitled" src="https://codepen.io/eraser5th/embed/wvyzGoR?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/wvyzGoR">
+  Untitled</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### class セレクター
+
+適応したい`class`を指定する。class名の前に`.`をつける。
+
+<iframe height="400" width="100%" scrolling="no" title="Untitled" src="https://codepen.io/eraser5th/embed/XWZjXQW?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/XWZjXQW">
+  Untitled</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### id セレクター
+
+適応したい`id`を指定する。`id`名の前に`#`をつける。
+
+:::warning
+優先度と言われるものなどの問題から、`id`で指定することはあまり好まれない。優先度について詳しくは[こちら](https://web.dev/learn/css/the-cascade/)。なぜ好まれないかについて詳しくは[こちらの本](https://www.amazon.co.jp/CSS%E8%A8%AD%E8%A8%88%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89-%E8%A9%B3%E7%B4%B0%E8%A7%A3%E8%AA%AC-%E5%AE%9F%E8%B7%B5%E7%9A%84%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E9%9B%86-%E5%8D%8A%E7%94%B0-%E6%83%87%E5%BF%97/dp/429711173X)を読むと良い。（一冊しかないので貸せませんが、勉強会には持って行くので見たい人は言ってください）
+:::
+
+<iframe height="400" width="100%" scrolling="no" title="Untitled" src="https://codepen.io/eraser5th/embed/KKQgEwV?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/KKQgEwV">
+  Untitled</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### 状態セレクター（擬似クラス）
+
+適応したい状態などを指定する。指定したい状態の前に`:`をつける。状態について詳しくは後述の擬似クラスを参照してください。
+
+<iframe height="400" width="100%" scrolling="no" title="Untitled" src="https://codepen.io/eraser5th/embed/XWZjGMe?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/XWZjGMe">
+  Untitled</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### 紹介
+
+他にも様々なセレクター（正確には違うかも）が存在します。勉強におすすめなものを二つほど紹介しておきます。
+
+- 個人的にCSSを学ぶならこのサイトがおすすめ [web.dev](https://web.dev/learn/css/selectors/)
+- ゲームを通してセレクターを学ぶ [CSS Dinor](https://flukeout.github.io/)
+
+---
+
+### よく使う値・関数
+
+CSSでよく使われる値と関数を紹介します
+
+---
+
+#### 長さを表す値・関数
+
+全ては紹介しないので知りたい方は[詳細](https://web.dev/learn/css/sizing/)を。
+
+| 値・関数 | 説明 |
+| ------- | ---- |
+| px      | 1/96インチ |
+| 数値 | ただの数値。場合によってそれの表すものは異なる。大抵倍率であることが多い。 |
+| %       | 何かしらとの相対的な長さ。その何かは場合によって異なる。 |
+| calc関数 | 四則演算が可能 |
+
+---
+
+#### 色を表す値・関数
+
+全ては紹介しないので知りたい方は[詳細](https://web.dev/learn/css/color/)を。
+
+| 値・関数 | 説明 |
+| ------|---|
+| Hex(RGB) | 六桁の十六進数の頭に`#`をつけたもの。先頭二桁は赤の明るさ、真ん中二桁は緑の明るさ、最後は青の明るさを表す。値が大きいほど明るくなる。|
+| Hex(RGBA) | 先程のHex(RGB)の後ろに透明度を表す二桁を追加したもの。 |
+
+---
+
+### 基本的なプロパティ
+
+プロパティとは`文字の色`や`背景色`、`幅`、`高さ`の様なもののことです。このプロパティに対し特定の値を与えることで見た目を変えることができます。
+
+:::info
+CSSには大量のプロパティ（数百個？）があり、全てを教えるのは困難です。なのでその中でも特によく使うものを紹介します。
+
+また、それぞれのプロパティに対してもいくつも値の指定の仕方があり、そのプロパティ１つに対して１つ記事が書けてしまうぐらい複雑です。なのでちゃんと知りたい方は[web.dev](https://web.dev/learn/css/)を参照してください。
+:::
+
+---
+
+#### width, height
+
+`width`と`height`はそれぞれ`幅`と`高さ`を設定します。
+
+使用可能な単位は[こちら](https://www.w3schools.com/cssref/css_units.asp)、または[こちら](https://web.dev/learn/css/sizing/)
+
+よく使うものとしては
+
+- `px`： 1/96 インチ
+- `%`： 親の要素との相対の長さ
+
+<iframe height="300" width="100%" scrolling="no" title="CSS_width・height" src="https://codepen.io/eraser5th/embed/xxYPgpM?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/xxYPgpM">
+  CSS_width・height</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### color
+
+`color`は`文字の色`を設定します。
+
+[詳細](https://web.dev/learn/css/color/)
+
+<iframe height="300" width="100%" scrolling="no" title="CSS_color" src="https://codepen.io/eraser5th/embed/YzeEZGp?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/YzeEZGp">
+  CSS_color</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### background
+
+`background`は`背景`を設定します。
+
+[詳細](https://web.dev/learn/css/backgrounds/)
+
+<iframe height="300" width="100%" scrolling="no" title="CSS background" src="https://codepen.io/eraser5th/embed/wvypVWJ?default-tab=result&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/wvypVWJ">
+  CSS background</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### border
+
+`border`は`境界線`を設定します。
+
+[詳細](https://web.dev/learn/css/borders/)
+
+<iframe height="300" width="100%" scrolling="no" title="CSS border" src="https://codepen.io/eraser5th/embed/KKQZOgQ?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/KKQZOgQ">
+  CSS border</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### border-radius
+
+`border-radius`は`border(境界線)`を丸めます。
+
+[詳細](https://web.dev/learn/css/borders/#border-radius)
+
+<iframe height="300" width="100%" scrolling="no" title="CSS border-radius" src="https://codepen.io/eraser5th/embed/eYVyqGQ?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/eYVyqGQ">
+  CSS border-radius</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### margin, padding
+
+`margin`は`border`の外側に幅を設けます。対して`padding`は`border`の内側に幅を設けます。
+
+[詳細](https://web.dev/learn/css/spacing/)
+
+![](https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg?auto=format&w=1600)
+
+
+---
+
+#### font-size
+
+`font-size`は`文字の大きさ`を設定します。
+
+[詳細](https://web.dev/learn/css/typography/#change-the-size-of-text)
+
+<iframe height="300" width="100%" width="100%" scrolling="no" title="CSS font-size" src="https://codepen.io/eraser5th/embed/jOZYgaz?default-tab=css%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/jOZYgaz">
+  CSS font-size</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+---
+
+#### テキストの装飾
+
+- `font-family`：`文字のフォント`を設定します
+- `font-weight`：`文字の太さ`を設定します
+- `line-height`：`1行の高さ`を設定します
+
+[詳細](https://web.dev/learn/css/typography/)
+
+---
+
+#### text-align
+
+`text-alighn`は`文章の寄せ`を設定します。
+
+[詳細](https://web.dev/learn/css/typography/#change-text-alignment)
+
+---
+
+#### display
+
+`display`は`表示動作`を設定します。
+
+[詳細](https://web.dev/learn/css/layout/)
+
+---
+
+#### position
+
+`position`は`配置の方法`を設定します。
+
+
+
+---
+
+#### overflow
+
+`overflow`は子要素がはみ出た時の表示方法を設定します。
+
+[詳細](https://web.dev/learn/css/overflow/)
+
+---
+
+#### transition
+
+`transition`は`プロパティの値の変化をスムーズにする`ことができます。
+
+なので、軽いアニメーションの様なものをつけたい場合は、これと擬似要素などを組み合わせることで実現できる。しっかりとしたアニメーションをつけたい場合は、[`keyframe`](https://web.dev/learn/css/animations/)を使うが、今回は紹介しない（というか僕も使ったことがないので詳しくない）
+
+[詳細](https://web.dev/learn/css/transitions/)
+
+---
+
+### 擬似クラス
+
+擬似クラスは、マウス操作などによる状態（ホバー中など）や、リンク先のサイトに訪れたことがあるかどうか、入力フォームの状態（無効なメールアドレスによるエラーなど）、要素の関係性（一個目の子要素など）などを選択することができる。
+
+[詳細](https://web.dev/learn/css/pseudo-classes/)
+
+---
+
+### `flexbox`
+
+[詳細](https://web.dev/learn/css/flexbox/)
+
+---
+
+### 紹介
+
+CSSの練習に良いサイトを紹介しておきます。難易度はかなり高いですが、楽しく慣れることができるのではないかと思います。
+
+- [CSS Battle](https://cssbattle.dev/)
+
+---
+
+## 演習
+
+---
+
+### 問題１
+
+YouTubeの動画説明を作ろう
+- 動画タイトル
+- チャンネル名
+- 再生回数・投稿されてからの時間
+
+:arrow_down: こんな感じ
+
+---
+
+
+#### 説明
+
+こんな方針でやるといい感じになるよ!（これ以外の方法ももちろんある）
+
+- divタグで`movieItem-title`というクラスをつける
+- divタグで`movieItem-channelName`というクラスをつける
+- divタグで`movieItem-viewedCountAndTime`というクラスをつける
+- あとはいい感じにフォントの大きさと色などをいじる
+
+
+---
+
+### 問題２
+
+YouTubeの動画説明にアイコンもつけよう
+- 動画タイトル
+- チャンネル名
+- 再生回数・投稿されてからの時間
+- アイコン
+
+:arrow_down: こんな感じ
+
+---
+
+
+#### 説明
+
+こんな方針でやるといい感じになるよ!（これ以外の方法ももちろんある）
+
+- divタグで`movieItem-informations`というクラスを作り、アイコンと動画のタイトル、チャンネル名、再生回数・投稿されてからの時間を囲ったものにする
+- さらにその中にdivタグで`movieItem-strings`というクラスを作り、動画のタイトル、チャンネル名、再生回数・投稿されてからの時間を囲ったものにする
+- `movieItem-informations`に`display: flex;`プロパティを加え、横並びにする
+- あとはいい感じに間を空けたりする
+
+---
+
+### 問題３
+
+YouTubeの動画サムネイルもくっつけよう  
+ついでにそれを`movieItem`というクラスで囲ってみよう
+
+- 動画タイトル
+- チャンネル名
+- 再生回数・投稿されてからの時間
+- アイコン
+- 動画サムネイル
+
+
+:arrow_down: こんな感じ
+
+
+#### 説明
+
+
+こんな方針でやるといい感じになるよ!（これ以外の方法ももちろんある）
+
+- divタグで`movieItem-thumbnail`というクラスを作り、`height, width`をいい感じに決めて`background: #000000;`とする
+- `movieItem-thumbnail`と`movieItem-informations`の間をいい感じに間を空ける
+- それらをdivタグの`movieItem`クラスで囲う(`movieItem`クラスの`height`もいい感じにする※一応、ここでは300pxにしている)
+
+---
+
+### 問題4(とてもむずかしい)
+
+
+YouTubeっぽいレイアウトを作る
+
+- [完成形のリンク](https://codepen.io/eraser5th/pen/BaYYaEK)
+
+:::info
+これはとてもむずかしいので、やりたい人だけ挑戦してみてね！  
+
+もし途中までできたりしたら是非 **#Web_雑談** とかで言ってみてね〜！(見てみたい)
+:::
