@@ -1,0 +1,81 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 問題2 `ArrayPrimeFilter`
+
+<Tabs>
+<TabItem value="summary" label="問題">
+2以上の整数値の配列を受け取り、含まれる素数の配列を返す関数を作成しなさい。
+
+例） `[2, 3, 4, 5] => [2, 3, 5]`
+</TabItem>
+
+<TabItem value="answer1" label="回答例１">
+
+```js
+function ArrayPrimeFilter(a) {
+  const primeInA = []
+  for (let i = 0; i < a.length; i = i + 1) {
+    let isPrimeFrag = true
+    const ai = a[i]
+    if (ai === 2) {
+      primeInA.push(ai)
+      continue
+    }
+    for (let j = 2; j < ai; j = j + 1) {
+      if (ai % j === 0) {
+        isPrimeFrag = false
+        break
+      }
+    }
+    if (isPrimeFrag) {
+      primeInA.push(ai)
+    }
+  }
+  return primeInA
+}
+```
+</TabItem>
+
+<TabItem value="answer2" label="回答例２">
+
+```js
+function isPrime(n) {
+  if (n === 2) true
+  for (let i = 2; i < n; i = i + 1) {
+    if (n % i === 0) return false
+  }
+  return true
+}
+
+function ArrayPrimeFilter(a) {
+  const primeInA = []
+  for (let i = 0; i < a.length; i = i + 1) {
+    if (isPrime(a[i])) {
+      primeInA.push(a[i])
+    }
+  }
+  return primeInA
+}
+```
+
+</TabItem>
+
+<TabItem value="answer3" label="回答例３">
+
+```js
+function isPrime(n) {
+  if (n === 2) true
+  for (let i = 2; i < n; i = i + 1) {
+    if (n % i === 0) return false
+  }
+  return true
+}
+
+function ArrayPrimeFilter(a) {
+  return a.filter(isPrime)
+}
+```
+
+</TabItem>
+</Tabs>

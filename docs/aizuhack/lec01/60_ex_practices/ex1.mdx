@@ -1,0 +1,27 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 問題1 `Distance`
+
+<Tabs>
+
+<TabItem value="summary" label="問題">
+与えられる二つの点の距離を求める関数を考えなさい。
+<br />
+この時、√の計算には以下を用いると良い。
+
+```js
+Math.sqrt(4) // 2
+```
+</TabItem>
+
+<TabItem value="answer" label="回答例">
+
+```js
+function distance(a, b) {
+  return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2)
+}
+```
+
+</TabItem>
+</Tabs>

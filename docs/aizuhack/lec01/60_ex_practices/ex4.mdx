@@ -1,0 +1,23 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 問題4
+
+```js
+function g (f) {
+  return (function (x) {
+    return f(f(x))
+  })
+}
+function increment (x) {
+  return x + 1;
+}
+
+// g(increment)(0)の結果を考えて、実行してみよ
+// g(g(increment))(0)の結果を考えて、実行してみよ
+// g(g(g(increment)))(0)の結果を考えて、実行してみよ
+// g(g(g))(increment)(0)の結果を考えて、実行してみよ
+// g(g(...g(increment)))(0) でgがn個のときの結果を考えてみよ
+// g(g(...g(g)))(increment)(0) でgがn個のときの結果を考えてみよ
+// 最後の２つは厳密性は無視しても良いので、証明を考えてみてください
+```
