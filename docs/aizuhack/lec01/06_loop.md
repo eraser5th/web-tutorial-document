@@ -1,13 +1,9 @@
 ---
-sidebar_position: 4
-title: ループ
 ---
 
-# 繰り返し
+# 繰り返し( for・while )
 
 同じ処理を繰り返したい場合、`for文`や`while文`を使う。
-
----
 
 ## `for`文
 
@@ -24,8 +20,6 @@ for (初期化; 継続条件; 増分) {
 5. `増分`
 6. 2へ戻る
 
----
-
 ### 例
 
 0 ~ 100 までを出力する
@@ -35,8 +29,6 @@ for (let i = 0; i <= 100; i = i + 1) {
   console.log(i)
 }
 ```
-
----
 
 ## `while`文
 
@@ -53,8 +45,6 @@ while文は以下の順に実行される
 2. `処理内容`
 3. 1に戻る
 
----
-
 ### 例
 
 0 ~ 100 までを出力する
@@ -66,8 +56,6 @@ while (i <= 100) {
   i = i + 1
 }
 ```
-
----
 
 ## `break`
 
@@ -83,8 +71,6 @@ for (let i = 0; i < 100; i = i + 1) {
 }
 ```
 
----
-
 ## `continue`
 
 `for文`や`while文`の中で`continue`を実行すると、その回のループが終了し次のループに入る。
@@ -98,21 +84,15 @@ for (let i = 0; i < 100; i = i + 1) {
 }
 ```
 
----
-
 ## 演習
 
 `for文`、`while文`を使ってみよう。
-
----
 
 ### 問題3 `HelloWorld_10times`
 
 `for文` または `while文`を用いて、`Hello World!`を10回出力させなさい。
 
 [回答例](https://github.com/eraser5th/AizuHack-Web/blob/master/lec1/ex03_HelloWorld_10times/HelloWorld_10times.js)
-
----
 
 ### 問題4 `ArrayMin`
 
