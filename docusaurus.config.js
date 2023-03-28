@@ -32,7 +32,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            "https://github.com/eraser5th/my-docusaurus-template",
+            "https://github.com/eraser5th/web-tutorial-document",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
