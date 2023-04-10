@@ -23,7 +23,11 @@ ls(list segments)コマンド
 今いる場所にあるファイル一覧を表示する
 
 ```bash
+# 今いる場所のファイル一覧を表示する
 ls
+
+# 今いる場所のファイル一覧を隠しファイルも含めて表示する
+ls -al
 ```
 
 ### pwd
@@ -33,6 +37,19 @@ pwd(print working directory)コマンド
 
 ```bash
 pwd
+```
+
+### cat
+
+cat(concatenate and print files)コマンド  
+ファイルの中身を表示する
+
+```bash
+# aiueo.txtの中身を表示する
+cat aiueo.txt
+
+# aiueo.txt, aiueo2.txtの中身を連結して表示する
+cat aiueo.txt aiueo2.txt
 ```
 
 ### cd
@@ -47,8 +64,8 @@ cd /home/matumoto
 
 ### mkdir
 
-mkdir(make directory)コマンド  
-ディレクトリ[^1]を作成する
+mkdir(make directories)コマンド  
+ディレクトリを作成する
 
 ```bash
 # 今いる場所にaaaaaという名前のディレクトリを作成する
@@ -71,8 +88,11 @@ rm(remove)コマンド
 ファイルを削除する
 
 ```bash
-# aaaというファイルを削除する
-rm aaa
+# aaa.txtというファイルを削除する
+rm aaa.txt
+
+# bbbというディレクトリを中身も含めて再帰的に削除する
+rm -r bbb
 ```
 
 ちなみに、全てのファイルを削除するコマンド`rm -rf /`などがバルスとかって呼ばれてネタにされがちです
@@ -118,5 +138,3 @@ echo "hello world"
 ちなみに、おそらく後々の演習でパスを通す作業が出てくるかも...?
 
 </details>
-
-[^1]: 複数のファイルをまとめておけるもの。「フォルダ」と同じ
