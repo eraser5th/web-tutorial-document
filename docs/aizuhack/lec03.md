@@ -1,5 +1,6 @@
 ---
-title: AizuHack HTTP API勉強会
+sidebar_position: 4
+title: AizuHack HTTP API勉強会 🚧
 slideOptions:
   theme: white
   transition: 'fade'

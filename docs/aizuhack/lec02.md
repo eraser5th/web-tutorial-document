@@ -1,5 +1,6 @@
 ---
-title: AizuHack HTML・CSS勉強会
+sidebar_position: 3
+title: AizuHack HTML・CSS勉強会 🚧
 slideOptions:
   theme: white
   transition: 'fade'

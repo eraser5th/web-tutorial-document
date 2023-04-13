@@ -1,5 +1,5 @@
 ---
-position: 1
+sidebar_position: 1
 ---
 
-# AizuHack - はじめに -
+# AizuHack - はじめに - 🚧
