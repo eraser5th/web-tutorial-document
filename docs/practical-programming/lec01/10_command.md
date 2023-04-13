@@ -127,7 +127,7 @@ echoコマンド
 echo "hello world"
 ```
 
-<details><summary>コラム</summary>
+<details><summary>「PATHを通す」について</summary>
 
 色んな記事などを見ていると「パス(PATH)を通す」という言葉がよく使われますが、どういう意味か知っていますか？  
 ちなみに、自分は大学に入るまで知りませんでした  
