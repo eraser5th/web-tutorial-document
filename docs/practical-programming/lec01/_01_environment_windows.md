@@ -10,7 +10,7 @@ Windows の標準で使えるターミナルには、コマンドプロンプト
 
 [公式ドキュメント](https://learn.microsoft.com/ja-jp/windows/wsl/install)を参照してください
 
-<details><summary>コラム</summary>
+<details><summary>コラム：WSLのバージョンについて</summary>
 
 実は WSL1,WSL2 というバージョンが存在しています  
 詳しくは以下のリンクを見てみてください
