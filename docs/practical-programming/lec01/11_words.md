@@ -86,4 +86,3 @@ export PATH=$PATH:/home/matumoto/bin
       # /home/student/s1280136/aiueoディレクトリに移動する
       cd /home/student/s1280136/aiueo
       ```
-
