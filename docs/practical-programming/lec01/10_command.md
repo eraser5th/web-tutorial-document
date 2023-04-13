@@ -2,7 +2,7 @@
 
 ## UNIXコマンドとは
 
-LinuxやMacなどのUNIX系OSでTerminalを操作するためのコマンド群
+LinuxやMacなどのUNIX系OSでターミナルを操作するためのコマンド群
 
 例. `cd`, `mkdir`, `pwd`, `ls`
 
@@ -136,5 +136,11 @@ echo "hello world"
 - [PATHを通す | 「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典](https://wa3.i-3-i.info/word18471.html)
 
 ちなみに、おそらく後々の演習でパスを通す作業が出てくるかも...?
+
+さらにちなみに、以下のコマンドを実行するとどこにPATHが通っているか確認できます
+
+```bash
+echo $PATH
+```
 
 </details>

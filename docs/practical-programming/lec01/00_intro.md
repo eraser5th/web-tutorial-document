@@ -47,6 +47,9 @@ TODO: ここでSA[^1]の自己紹介
 実践的プログラミングのSlackワークスペースがあって、そこでやり取りを行うので入ってください🙏🏻  
 メールアドレスなどは個人用のgmailなどでも、学生用の`s1xxxxxx@u-aizu.ac.jp`でもどちらでも大丈夫です
 
+この授業では、`#general2023`と`#random2023`というチャンネルを使おうと思ってるので、実践的プログラミングのSlackに入れた人はチャンネルにも入ってください🙏🏻  
+※チャンネルへの入り方は、左側のメニューバー > 「チャンネルを追加する」 > 「チャンネル一覧」 からチャンネルを検索でき、チャンネルに入れます
+
 <details><summary>Slackとは</summary>
 
 Slackはチャットツールです(LINEみたいな感じです)
@@ -67,5 +70,11 @@ Slackはチャットツールです(LINEみたいな感じです)
 https://join.slack.com/t/pracprog/shared_invite/zt-1sdzotuzk-0t6VRtYU3NjL8OWiFcivYg
 
 ※これらの招待リンクは作成してから30日でリンク切れするので、2023/5月あたりにはリンク切れしてると思います
+
+## アンケートについて
+
+授業内容について簡単にアンケートするのでご協力お願いします！！
+
+- [アンケートリンク](https://forms.gle/PUJwQaVAMaSpyDch8)
 
 [^1]: Student Assistantの略
