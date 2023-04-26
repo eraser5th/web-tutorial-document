@@ -1,0 +1,12 @@
+### Array.sort()
+
+配列を渡した関数に従ってソート（順番入れ替え）する。渡す関数の仕様についてはちょっと難しいので、[こちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)を見ていただけると。
+
+```javascript
+const numbers = [2, 1, 5, 3, 4]
+numbers.sort((a, b) => {
+  return a - b
+})
+
+console.log(numbers) // 期待される出力: [1, 2, 3, 4, 5]
+```

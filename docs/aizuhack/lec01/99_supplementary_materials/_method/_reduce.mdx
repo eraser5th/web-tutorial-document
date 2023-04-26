@@ -1,0 +1,19 @@
+### Array.reduce()
+
+説明が難しいので例を見てください。
+
+例） 配列内の総和を求める。
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+const sum = numbers.reduce((a, b) => {
+  return a + b
+})
+
+console.log(sum) // 期待される出力: 15
+
+// numbersは変わらない
+console.log(numbers)
+```
+
+詳細は[こちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)

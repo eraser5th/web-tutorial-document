@@ -1,0 +1,19 @@
+### Array.filter()
+
+配列の各値に対し関数を実行し、その関数がtrueを返したものを残し、falseを返したものを消去した配列を返します。（日本語むずい😅）
+
+例） 偶数のみを残す
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+const evens = numbers.filter((v) => {
+  return v % 2 === 0
+})
+
+console.log(evens)
+
+// numbersは変わらない
+console.log(numbers)
+```
+
+詳細は[こちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)

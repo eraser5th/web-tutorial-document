@@ -1,0 +1,16 @@
+## スプレッド構文(配列の分解)
+
+配列はスプレッド構文(`...`)を使うことによって分解することができる。
+
+使い所は様々で、元の配列を変えずに値を追加したい時(Array.pushを使うと元の配列が変わってしまう)など。
+
+```javascript
+const numbers = [1, 2, 3]
+
+const newNumbers = [0, ...numbers, 4]
+console.log(newNumbers) // 期待される出力: [0, 1, 2, 3, 4]
+
+// この様にすると、配列の中に配列が入っている状態になってしまう
+const newMistakenNumbers = [0, numbers, 4]
+console.log(newMistakenNumbers) // 期待される出力: [0, [1, 2, 3], 4]
+```
