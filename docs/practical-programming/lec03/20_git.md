@@ -64,6 +64,7 @@ git config --global -l
 ```
 cd ここに作業用のディレクトリ
 mkdir learn-git
+cd learn-git
 ```
 
 その後、`git init`を行い、リポジトリを作成してください
