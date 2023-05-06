@@ -1,17 +1,15 @@
 ---
 ---
 
-# 条件分岐( if・switch )
-
-## 条件分岐 其ノ壱（if文）
+# if文(条件分岐)
 
 `if文`を使うことにより、与えた真偽値によって実行する処理の内容が変わる。
 
 与えられた真偽値が`true`であれば`if`の中身が実行され、`false`であれば`else`の中身が実行される。また、`else if`を使うことにより、`else`に対して別の条件を加えることもできる。
 
-### 書き方
+## 書き方
 
-#### その１
+### その１
 
 ```javascript
 if (条件) {
@@ -20,6 +18,16 @@ if (条件) {
 ```
 
 例）
+
+<iframe
+  src="https://stackblitz.com/edit/js-kzpvxk?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 ```javascript
 const a = 1
 
@@ -28,7 +36,7 @@ if (a === 1) {
 }
 ```
 
-#### その２
+### その２
 
 ```javascript
 if (条件) {
@@ -49,7 +57,7 @@ if (a === 1) {
 }
 ```
 
-#### その３
+### その３
 
 ```javascript
 if (条件１) {
@@ -74,7 +82,7 @@ if (a === 1) {
 }
 ```
 
-### 例
+## 例
 
 数値の偶奇判定
 
@@ -90,11 +98,11 @@ if (num % 2 === 0) {
 }
 ```
 
-### 演習
+## 演習
 
 `if文`を使ってみよう
 
-#### 問題１ `Min`
+### 問題１ `Min`
 
 二つの数値a,bを比較し、小さい方を出力させなさい。
 
@@ -111,7 +119,7 @@ let b = 4
 // この下に自分のプログラム
 ```
 
-#### 問題2 `FizzBuzz`
+### 問題2 `FizzBuzz`
 
 数値aが３の倍数であるときは`Fizz`を、５の倍数である時は`Buzz`を、１５の倍数である時は`FizzBuzz`を出力させなさい。
 
@@ -127,46 +135,3 @@ let a = 18
 // この下に自分のプログラム
 ```
 
-## 条件分岐 其ノ弐（switch・case文）
-
-`switch・case文`を使うことにより、与えた値によって実行する処理の内容が変わる。
-
-### 書き方
-
-```javascript
-switch (確認したい値) {
-  case 一致する値１:
-    // 処理1
-    break
-  case 一致する値２:
-    // 処理2
-    break
-  ...
-  default: // どのcaseにも当てはまらなかった場合に実行される。（なくても良い）
-    // 処理
-    break
-}
-```
-
-:::danger
-`break`を書き忘れない様に気をつけよう。
-:::
-### 例
-
-```javascript
-const a = 1
-const b = 2
-const operation = '+'
-
-switch (operation) {
-  case '+':
-    console.log(a + b)
-    break
-  case '*':
-    console.log(a * b)
-    break
-  default:
-    console.log('不明な演算子`', operation, '`を渡されました')
-    break
-}
-```

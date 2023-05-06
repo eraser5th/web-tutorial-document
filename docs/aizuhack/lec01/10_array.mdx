@@ -1,0 +1,52 @@
+# 配列（Array）
+
+プログラミングにおいてリストを扱うための概念。
+
+## 例１
+
+```javascript
+const animals = ["dog", "cat", "bird"]
+
+console.log(animals) // 期待される出力: ["dog", "cat", "bird"]
+```
+
+## 例２
+
+配列の中に配列を入れることもできる。　
+
+```javascript
+const arrayInArray = [
+  [1, 1, 1],
+  [2, 4, 8],
+  [3, 9, 27]
+]
+```
+
+## 要素へのアクセス
+
+配列内の要素は、`配列[数値]`でアクセスできる。
+
+:::warning
+配列の１番目は`配列[0]`、２番目は`配列[1]`、の様に0スタートであることに注意してください。
+:::
+
+### 例１
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+console.log(numbers[0])
+console.log(numbers[1])
+```
+
+### 例２
+
+変数を使ってアクセスすることもできます。
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]
+
+const a = 4
+console.log(numbers[a])
+```
+

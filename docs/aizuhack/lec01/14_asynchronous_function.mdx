@@ -1,0 +1,33 @@
+---
+---
+
+# 非同期処理
+
+プログラミングの実行として同期処理と非同期処理と呼ばれるものがある。
+同期処理とはこれまでやってきたような処理です。
+ある一つ（1行でも良い）の処理を実行しているとき次の処理を実行することはなく、処理が終わって初めて次の処理が実行されます。
+
+```javascript
+function sayMorningGreetSync() {
+  console.log("good morning");
+}
+
+sayMorningGreetSync()      // まずこの処理が実行される
+console.log("good night"); // 一つ前の処理が終わると実行される
+```
+
+対して、ある処理をした時にその処理の完了を待たずに次の処理へ進んでいくようなものを非同期処理と呼びます。
+
+```javascript
+async function sayMorningGreetAsync() { // 1秒後に "good morning" と出力する関数
+  setTimeout(() => {
+    console.log("good morning")
+  }, 1000)
+}
+
+await sayMorningGreetAsync();    // この処理は非同期のため、実行完了を待たずに次の処理に進む
+console.log("good night"); // 上の処理を待たずに実行
+```
+
+JavaScriptにおいて、実行するとPromiseを返し処理が継続される関数を非同期関数という。
+
