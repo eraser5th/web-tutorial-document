@@ -1,6 +1,6 @@
 {
-  "position": 3,
-  "label": "第1回 JavaScript 🚧",
+  "position": 2,
+  "label": "環境構築",
   "collapsible": true,
   "collapsed": false,
   "className": "red",
