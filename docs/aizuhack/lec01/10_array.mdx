@@ -1,36 +1,20 @@
 # 配列（Array）
 
-プログラミングにおいてリストを扱うための概念。
+プログラミングにおいてリストを扱うための概念。  
+イメージはカラーボックスのような感じ？
 
-## 例１
-
-```javascript
-const animals = ["dog", "cat", "bird"]
-
-console.log(animals) // 期待される出力: ["dog", "cat", "bird"]
-```
-
-## 例２
-
-配列の中に配列を入れることもできる。　
-
-```javascript
-const arrayInArray = [
-  [1, 1, 1],
-  [2, 4, 8],
-  [3, 9, 27]
-]
-```
+<iframe
+  src="https://stackblitz.com/edit/js-swlssf?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="350px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## 要素へのアクセス
 
-配列内の要素は、`配列[数値]`でアクセスできる。
-
-:::warning
-配列の１番目は`配列[0]`、２番目は`配列[1]`、の様に0スタートであることに注意してください。
-:::
-
-### 例１
+配列内の要素は `[]` でアクセスできる。
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5]
@@ -38,8 +22,6 @@ const numbers = [1, 2, 3, 4, 5]
 console.log(numbers[0])
 console.log(numbers[1])
 ```
-
-### 例２
 
 変数を使ってアクセスすることもできます。
 
@@ -50,3 +32,22 @@ const a = 4
 console.log(numbers[a])
 ```
 
+:::warning
+配列の１番目は`配列[0]`、２番目は`配列[1]`、の様に0スタートであることに注意してください。
+:::
+
+## 配列のネスト
+
+配列の中に配列を入れることもできる。  
+一般に、二重の配列を二次元配列、三重の配列を３次元配列と呼ぶこともある。
+
+イメージするなら配列がカラーボックスだから、二次元配列は棚、三次元配列は図書館？
+
+<iframe
+  src="https://stackblitz.com/edit/js-ux445m?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="400px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>

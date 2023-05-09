@@ -3,14 +3,152 @@
 
 # 関数（function）
 
-主に処理をひとまとめにするために使う。
+## 「関数って何？」
 
-`console.log`も関数。
+基本的には数学で出てくる関数(f(x)など)と同じものと思えば良い。  
+
+例えば数学における以下の関数は
+
+$$
+f (x) = x^2 + 2x + 1
+$$
+
+以下のような関数で実装できる
+
+```javascript
+function f(x) {
+  return x ** 2  + x * 2 + 1
+}
+```
+
+ただしプログラミングにおける関数は普段皆さんが見慣れた数学よりも複雑なことをすることができます。
+
+例えば、以下のように数値ではない値が結果となったり
+
+```javascript
+function f(x) {
+  return "The value of x is " + x
+}
+```
+
+何もしなかったり、
+
+```javascript
+function f (x) { // 普通はこのような関数は作りません　
+}
+```
+
+if文で条件分岐したり
+
+```javascript
+function f (x) {
+  if (x % 2 === 0) {
+    return "even"
+  } else {
+    return "odd"
+  }
+}
+```
+
+for文で繰り返し処理したり
+
+```javascript
+function f (x) { // 0 ~ xまでの合計を求める関数
+  let result = 0;
+  for (let i = 0; i <= x; i++) {
+    result = result + i
+  }
+  return result
+}
+```
+
+といった感じで、言ってしまえば基本的になんでもできます。
+
+## 「関数はなんのためにある？」
+
+関数を使うことによる利点のうち最初に実感できるものは以下の二つだと思います。
+
+### 1. 処理に名前をつけることができる
+
+早速ですが質問です。以下の二つのプログラムどちらがわかりやすいでしょうか？
+
+```javascript
+const point1 = { x: 10, y: -5 }
+const point2 = { x: 3, y: 1 }
+
+const dx = point1.x - point2.x
+const dy = point1.y - point2.y
+const dist = Math.sqrt(dx ** 2 + dy ** 2)  // Math.sqrtは √ の計算
+```
+
+```javascript
+function distance(point1, point2) {
+  const dx = point1.x - point2.x
+  const dy = point1.y - point2.y
+  return Math.sqrt(dx ** 2 + dy ** 2)  // Math.sqrtは √ の計算
+}
+
+const point1 = { x: 10, y: -5 }
+const point2 = { x: 3, y: 1 }
+
+const dist = distance(point1, point2)
+```
+
+これらはどちらも2つの点の距離を計算するプログラムです。違いとして、上は関数を用いておらず下は関数を用いています。
+
+上の場合、全てのプログラムを読んだ上で何をしているのかを理解する必要があります。
+
+対して下の場合、関数名が`distance`であり二つの引数を受け取ることからその関数が二つの点の距離を計算するものであると**「予想」**ができます。
+そして結果としてその「予想」は正しいです。
+
+今回は２点の距離を求めるだけなのでどちらも問題なく読めると思います。
+ですがこれがテイラー展開を用いたsin関数の計算のような、ある程度複雑な計算だとどうでしょうか...?
+名前が無いと何をしているかわからなくなることは想像に難くありません。
+
+<details>
+<summary>コラム：テイラー展開を用いたsin関数の定義と実装</summary>
+
+- 定義（微積１もしくは２でやります）
+
+$$
+sin\ x = \sum_{k=0}^{\infty}{(-1)^k \frac{x^{2k + 1}}{(2k + 1)!}}
+$$
+
+- 実装（ChatGPTくんに書いてもらった👅）
+
+基本的にはMath.sinを用いるため自作することはないが、ここでは例として。
+
+```javascript
+function sin(x) {
+  let result = 0
+  for (let i = 0; i < 10; i++) {
+    const sign = (-1) ** i
+    const numerator = x ** (2 * i + 1)
+    let denominator = 1
+    for (let j = 1, j < (2 * i + 1); j++) {
+      denominator *= j
+    }
+    const term = sign * numerator / denominator
+    const result += term
+  }
+}
+```
+
+</details>
+
+### 2. プログラムを細かく切り分けることができる。
+
+先程のと若干被りますが、関数を使うとプログラムを小さな単位で切り分けて名前をつけることができます。
+
+すると例えば100行のプログラムを、10行の関数10個とそれらを使った10行のプログラムにすることができるので人間の記憶力に優しいものになります。
 
 
-## 関
+## 関数の書き方
 
-書き方
+JavaScript関数には普通の関数、無名関数、アロー関数があります。  
+どれでも書けるようになっておくと便利です。
+
+### 普通の関数
 
 ```javascript
 function 関数名(引数名) {
@@ -53,9 +191,15 @@ checkIsEven1(4)
 checkIsEven1(5)
 ```
 
-## 関数 其ノ弐（無名関数）
+## 無名関数
 
-書き方
+その名の通り名前がない関数。
+「名前がないのでは意味がないじゃん」と思うかもしれないが、「名前が要らない場合」というのが存在する（後々出てくる）。
+
+また、無名関数を変数に代入することによって無名関数に名前をつけることもできる。
+（「なんでそんな回りくどいことを？」 と思うだろうが、色々あるんです。）
+
+### 書き方
 
 ```javascript
 // このままでは名前がないので呼び出せない
@@ -86,9 +230,13 @@ checkIsEven2(4)
 checkIsEven2(5)
 ```
 
-## 関数 其ノ参（アロー関数）
+## アロー関数
 
-書き方
+これまでのとは全く違う関数の書き方。これも無名関数と同じく名前がない。
+
+またアロー関数も変数に代入することができる。
+
+### 書き方
 
 ```javascript
 // このままでは名前がないので呼び出せない
@@ -121,92 +269,35 @@ checkIsEven3(5)
 
 ## `return文`
 
-`return文`により値を返すことができる。
+先ほどから関数の例で出てきていたヤツ。
+これを使うことで関数の結果を返すことができる。
 
-:::warning
-`return文`が実行されると関数の処理は終了する。
-:::
-
-次のコードは与えられた引数の二乗を返す関数。
-
-### 其ノ壱
+また`return`は関数の「結果」を返すので、もちろん関数の処理は`return`が実行された時点で終了する。
 
 ```javascript
-function square1(x) {
-  return x * x
+function f(x) {
+  return x ** 2  + x * 2 + 1
 }
-
-square1(4) // 期待される値 16
+console.log(f(6))
 ```
 
-### 其ノ弐
+`return`を使わない場合、関数は結果を返さない。
 
 ```javascript
-const square2 = function (x) {
-  return x * x
+function f(x) {
+  x ** 2  + x * 2 + 1
 }
-
-square2(5) // 期待される値 25
+console.log(f(6))
 ```
 
-### 其ノ参
+また `return` の後に何も書かなければ関数は結果を返さずに終了させることができる。
 
 ```javascript
-const square3 = (x) => {
-  return x * x
+function f(x) {
+  return              // ここでこの関数は終了するし、なんの値も返さない。
+  x ** 2  + x * 2 + 1 // returnで終了するのでここの計算はされない　
 }
-
-square3(6) // 期待される値 36
 ```
-
-## 値としての関数
-
-また、関数は値です。どういうことかというと次の様なことが可能です。
-
-### １ 変数への代入
-
-変数に入れる
-```javascript
-const myConsoleLog = console.log
-
-myConsoleLog("Hi!")
-```
-
-### ２ 関数の引数に渡す
-
-関数の引数にわたす（高階関数と言われる手法）
-
-```javascript
-const myConsoleLog = console.log
-
-function giveWow(f) {
-  f("Wow!")
-}
-
-giveWow(myConsoleLog)
-```
-
-例えば[この様な](https://github.com/eraser5th/AizuHack-Web/blob/master/lec1/high-func_example.js)使い方があります
-
-### ３ 関数を返す関数
-
-関数の結果が関数（これも高階関数と言われる）
-
-```javascript
-function createGreeting(greeting) {
-  return (function (name) {
-    console.log(greeting + name + "!")
-  })
-}
-
-const morningGreeting = createGreeting("Good morning! ")
-morningGreeting("ERASER")
-
-const helloGreeting = createGreeting("Hello! ")
-helloGreeting("matumoto")
-```
-
-他にも色々できますが、こんなものにしておきます。
 
 ## 演習
 

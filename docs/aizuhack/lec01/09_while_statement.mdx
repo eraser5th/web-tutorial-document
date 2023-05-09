@@ -1,6 +1,7 @@
-# `while`文
+# `while`文(繰り返し)
 
 書き方
+
 ```javascript
 while (継続条件) {
   // 処理内容
@@ -17,6 +18,17 @@ while文は以下の順に実行される
 
 0 ~ 100 までを出力する
 
+
+
+<iframe
+  src="https://stackblitz.com/edit/js-qssrmv?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 ```javascript
 let i = 0
 while (i <= 100) {
@@ -27,49 +39,31 @@ while (i <= 100) {
 
 ## `break`
 
-`for文`や`while文`の中で`break`を実行すると、`for文`、`while文`が終了する。
+`for文`と同じく`while文`の中で`break`を実行すると、`while文`が終了する。
 
 ```javascript
-for (let i = 0; i < 100; i = i + 1) {
-  const isError = doSomething()
-  if (isError) {
+let i = 0
+while (i < 100) {
+  if (n === 50) {
     break
   }
-  ...
+  console.log(i)
+  i = i + 1
 }
 ```
 
 ## `continue`
 
-`for文`や`while文`の中で`continue`を実行すると、その回のループが終了し次のループに入る。
+`for文`と同じく`while文`の中で`continue`を実行すると、その回のループが終了し次のループに入る。
 
 ```javascript
-for (let i = 0; i < 100; i = i + 1) {
+let i = 0
+while (i < 100) {
   if (i % 2 === 1) {
     continue
   }
   console.log(i + "は偶数です！")
+  i = i + 1
 }
 ```
 
-## 演習
-
-`for文`、`while文`を使ってみよう。
-
-### 問題3 `HelloWorld_10times`
-
-`for文` または `while文`を用いて、`Hello World!`を10回出力させなさい。
-
-[回答例](https://github.com/eraser5th/AizuHack-Web/blob/master/lec1/ex03_HelloWorld_10times/HelloWorld_10times.js)
-
-### 問題4 `ArrayMin`
-
-数値の配列aがある。aの中の最小値を出力しなさい。
-
-[回答例](https://github.com/eraser5th/AizuHack-Web/tree/master/lec1/ex04_ArrayMin/ArrayMin.js)
-
-```javascript
-const a = [2, 8, 0, -1, 7]
-
-// この下に自分のプログラム
-```
