@@ -1,0 +1,140 @@
+---
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# if文(条件分岐)
+
+`if文`を使うことにより、与えた値によって実行する処理の内容を変えることができる。
+
+与えられた値が`true`(もしくはtrueとして扱われる値)であれば`if`の中身が実行されます。
+
+## if
+
+```javascript
+if (条件) {
+  // 条件がtrueの時の処理
+}
+```
+
+<iframe
+  src="https://stackblitz.com/edit/js-kzpvxk?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## if else
+
+`else` を用いることにより、与えられた値が`false`（もしくはfalseとして扱われる値）の時の処理内容を書くことができる。
+
+```javascript
+if (条件) {
+  // 条件がtrueの時の処理
+} else {
+  // 条件がfalseの時の処理
+}
+```
+
+<iframe
+  src="https://stackblitz.com/edit/js-qhjfkr?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## else if
+
+`else if`を用いることにより、elseに条件を加えることができる。
+
+```javascript
+if (条件１) {
+  // 条件１がtrueの時の処理
+} else if (条件２) {
+  // 条件１がfalseで、条件２がtrueの時の処理
+}
+```
+
+<iframe
+  src="https://stackblitz.com/edit/js-sxassb?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## 演習
+
+`if文`を使ってみよう
+
+<Tabs>
+<TabItem value="summary" label="問題 １">
+二つの数値a,bを比較し、小さい方を出力させなさい。
+
+```javascript
+let a = 8
+let b = 4
+
+// この下に自分のプログラム
+```
+
+:::info
+できたら`a`, `b`の値を変えて試してみてください。
+:::
+
+</TabItem>
+<TabItem value="answor" label="解答例">
+
+```javascript
+let a = 8
+let b = 4
+
+// この下に自分のプログラム
+if (a < b) {
+  console.log(a)
+} else {
+  console.log(b)
+}
+```
+</TabItem>
+</Tabs>
+
+<Tabs>
+<TabItem value="summary" label="問題 ２">
+数値aが３の倍数であるときは`Fizz`を、５の倍数である時は`Buzz`を、１５の倍数である時は`FizzBuzz`を出力させなさい。
+どれでもない時には何もしないでください
+
+```javascript
+let a = 18
+
+// この下に自分のプログラム
+```
+
+:::info
+できたら`a`, `b`の値を変えて試してみてください。
+:::
+
+</TabItem>
+<TabItem value="answor" label="解答例">
+
+```javascript
+let a = 8
+
+// この下に自分のプログラム
+if (a % 15 === 0) {
+  console.log("FizzBuzz")
+} else if (a % 3 === 0) {
+  console.log("Fizz")
+} else if (a % 5 === 0) {
+  console.log("Buzz")
+}
+```
+
+</TabItem>
+</Tabs>

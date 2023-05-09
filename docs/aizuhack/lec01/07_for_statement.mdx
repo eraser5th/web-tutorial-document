@@ -1,0 +1,61 @@
+---
+---
+
+# for文（繰り返し）
+
+for文を使うことによって、処理を繰り返すことができる。
+
+```javascript
+for (初期化; 継続条件; 増分) {
+  // 処理内容
+}
+```
+
+`for文`は以下の順番で処理されていく。
+
+1. `初期化`
+2. `継続条件`。`継続条件`の評価が`true`であればこのまま続き、`false`の時は`for文`が終了する。 
+4. `処理内容`
+5. `増分`
+6. 2へ戻る
+
+## 例
+
+0 ~ 100 までを出力する
+
+<iframe
+  src="https://stackblitz.com/edit/js-qssrmv?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+
+## `break`
+
+`for文`の中で`break`を実行すると、`for文`が終了する。
+
+```javascript
+for (let i = 0; i < 100; i = i + 1) {
+  if (n === 50) {
+    break
+  }
+  ...
+}
+```
+
+## `continue`
+
+`for文`の中で`continue`を実行すると、その回のループが終了し次のループに入る。
+
+```javascript
+for (let i = 0; i < 100; i = i + 1) {
+  if (i % 2 === 1) {
+    continue
+  }
+  console.log(i + "は偶数です！")
+}
+```
+

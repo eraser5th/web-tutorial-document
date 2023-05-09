@@ -1,0 +1,115 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 再帰関数 (Recursive function)
+
+関数が自分自身を内部で呼び出す関数を **再帰関数** と呼ぶ。  
+基本的に受け取った引数を少しずつ変えながら次の自分を呼び出す。
+
+数学の漸化式だと思ってください。
+
+例えば以下の漸化式は、
+
+$$
+\begin{split}
+a_0 &= 0\\
+a_n &= 2 + a_{n - 1}
+\end{split}
+$$
+
+以下のプログラムで表せる。
+
+```javascript
+function a(n) {
+  if (n === 0) {
+    return 0
+  } else {
+    return 2 + a(n - 1)
+  }
+}
+```
+
+## 演習
+
+### 問題1
+
+<Tabs>
+
+<TabItem value="summary" label="問題">
+自然数 n を受け取り n の階乗(n!)を返す関数「factorial」を再帰関数で実装してください。
+</TabItem>
+
+<TabItem value="answor" label="解答">
+<iframe
+  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="300px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+</TabItem>
+
+</Tabs>
+
+### 問題2
+
+<Tabs>
+<TabItem value="summary" label="問題">
+自然数 n(0を含む) を受け取り、n番目のフィボナッチ数を返す関数「fibonacci」を再帰関数で実装してください。
+
+フィボナッチ数は、以下の漸化式で求められます。
+
+$$
+\begin{split}
+a_0 &= 0\\
+a_1 &= 1\\
+a_n &= a_{n - 1} + a_{n - 2}
+\end{split}
+$$
+
+</TabItem>
+
+<TabItem value="answor" label="解答">
+<iframe
+  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="300px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+</TabItem>
+</Tabs>
+
+### 問題3
+
+<Tabs>
+<TabItem value="summary" label="問題">
+自然数a, bを受け取り、ユークリッドの互除法を用いて a と b の最大公約数を返す関数「euclideanAlgorithm」を実装してください。  
+
+ユークリッドの互除法とは、  
+a と b の最大公約数は、a を bで割った余りをrとして b と r の最大公約数に一致するというものです。
+
+</TabItem>
+
+<TabItem value="answor" label="解答">
+<iframe
+  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="300px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+</TabItem>
+</Tabs>
+
+<iframe
+  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>

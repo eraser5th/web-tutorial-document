@@ -1,0 +1,43 @@
+# switch文(条件分岐)
+
+`switch・case文`を使うことにより、与えた値によって実行する処理の内容が変わる。
+
+### 書き方
+
+```javascript
+switch (確認したい値) {
+  case 一致する値１:
+    // 処理1
+    break
+  case 一致する値２:
+    // 処理2
+    break
+  ...
+  default: // どのcaseにも当てはまらなかった場合に実行される。（なくても良い）
+    // 処理
+    break
+}
+```
+
+:::danger
+`break`を書き忘れない様に気をつけよう。
+:::
+### 例
+
+```javascript
+const a = 1
+const b = 2
+const operation = '+'
+
+switch (operation) {
+  case '+':
+    console.log(a + b)
+    break
+  case '*':
+    console.log(a * b)
+    break
+  default:
+    console.log('不明な演算子`', operation, '`を渡されました')
+    break
+}
+```
