@@ -9,26 +9,46 @@
 ある一つ（1行でも良い）の処理を実行しているとき次の処理を実行することはなく、処理が終わって初めて次の処理が実行されます。
 
 ```javascript
-function sayMorningGreetSync() {
-  console.log("good morning");
+function main() {
+  console.log("good morning"); // この処理は同期処理なので終わるまで次に進まない
+  console.log("good night");
 }
-
-sayMorningGreetSync()      // まずこの処理が実行される
-console.log("good night"); // 一つ前の処理が終わると実行される
+main()
 ```
 
 対して、ある処理をした時にその処理の完了を待たずに次の処理へ進んでいくようなものを非同期処理と呼びます。
 
-```javascript
-async function sayMorningGreetAsync() { // 1秒後に "good morning" と出力する関数
-  setTimeout(() => {
-    console.log("good morning")
-  }, 1000)
-}
+非同期関数の例としては、setTimeoutという関数があります。これは第一引数に渡した関数を、第二引数に渡したミリ秒後に実行する関数です。
 
-sayMorningGreetAsync();    // この処理は非同期のため、実行完了を待たずに次の処理に進む
-console.log("good night"); // 上の処理を待たずに実行
+```javascript
+function main() {
+  setTimeout(() => {         // この処理は非同期のため、実行完了を待たずに次の処理に進む
+    consle.log("good morning");
+  })
+  console.log("good night"); // 上の処理を待たずに実行
+}
+main()
 ```
 
-JavaScriptにおいて、実行するとPromiseを返し処理が継続される関数を非同期関数という。
+## なぜ非同期処理？
+
+ではなぜこのようなものがあるのでしょうか？...と言っても難しくなりそうなので逆になかったらどうなるか、で説明したいと思います。
+
+まずは通信速度がちょー遅い世界でGoogleMapを開いてみましょう。（GoogleChromeを前提として説明します）
+
+1. まずGoogleMapをブラウザで開きます。
+2. 次にF12キーを押してブラウザのデベロッパーツールを開きます。
+3. デベロッパーツールの右上あたりにある点三つを押し、「その他のツール」の中の「ネットワーク状態」を開きます。
+4. ネットワーク スロット リングの項目を「高速3G」に変更（低速３Gでもいいが遅すぎるので）
+5. ページをリロード
+
+しばらくそのまま操作してみてください。
+
+次に通信速度がちょー遅くて非同期処理のない世界でGoogle Mapを開いてみる...ことはできないので想像してみましょう。
+どうなるか考えて、思いついたら教えてください。
+
+## 非同期関数
+
+ここまで非同期処理がどのようなものかについて学びましたが、では実際どうやってこれらを扱うのでしょうか？
+
 
