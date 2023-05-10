@@ -1,5 +1,5 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 ## VisualStudioCode のインストール
 
@@ -20,7 +20,7 @@ VSCode は、Windows などを開発した Microsoft 社が開発したツール
 
 <TabItem value="windows" label="Windows" default>
 
-Windowsの場合、先程のダウンロードページから、インストーラー(VSCodeUserSetup-ia32-1.67.1.exe みたいなやつ)がダウンロードできます
+Windows の場合、先程のダウンロードページから、インストーラー(VSCodeUserSetup-ia32-1.67.1.exe みたいなやつ)がダウンロードできます
 
 そのインストーラーを実行して、VSCode を実際にインストールします  
 (ダブルクリックなどで実行できます!)
@@ -37,7 +37,7 @@ Windowsの場合、先程のダウンロードページから、インストー�
 
 <TabItem value="mac" label="Mac">
 
-Macの場合、先程のダウンロードページから、VSCode-darwin-universal.zip がダウンロードできます
+Mac の場合、先程のダウンロードページから、VSCode-darwin-universal.zip がダウンロードできます
 
 それを解凍して「Visual Studio Code」というアプリケーションを実行してください  
 (ダブルクリックなどで実行できます!)
@@ -80,11 +80,11 @@ VSCode を開いてみて、以下のような画面になれば OK です 🎉
 
 色んな拡張機能をインストールして、自分好みのエディタを作りましょう!
 
-### Windowsの人向け拡張機能
+### Windows の人向け拡張機能
 
-Windowsの人はWSLを使って作業することが多くなると思います  
+Windows の人は WSL を使って作業することが多くなると思います  
 そのため、「Remote Development」をインストールしましょう  
-↓のような見た目のやつです
+↓ のような見た目のやつです
 
 ![remote-development](/img/share/vscode-installation/remote-development.png)
 
@@ -92,30 +92,30 @@ Windowsの人はWSLを使って作業することが多くなると思います
 
 - [Linux 用 Windows サブシステムで Visual Studio Code の使用を開始する](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode)
 
-これでWSLを使っての開発がよりスムーズになります👏
+これで WSL を使っての開発がよりスムーズになります 👏
 
-## VSCodeを使ってWSLで作業を行う方法
+## VSCode を使って WSL で作業を行う方法
 
-実際にWSLで作業をする方法も紹介します
+実際に WSL で作業をする方法も紹介します
 
 これも以下の公式ドキュメントに詳細な情報が書かれているので、気になる人は参照してください
 
 - [Visual Studio Code で WSL プロジェクトを開く](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode#open-a-wsl-project-in-visual-studio-code)
 
-WSLでVSCodeを開く方法は2通りあるので順に紹介していきます
+WSL で VSCode を開く方法は 2 通りあるので順に紹介していきます
 
-- WSLコマンドラインからVSCodeを開く
-- VSCodeからWSLを開く
+- WSL コマンドラインから VSCode を開く
+- VSCode から WSL を開く
 
-### WSLコマンドラインからVSCodeを開く
+### WSL コマンドラインから VSCode を開く
 
-WSLコマンドラインを開いて`code .`と入力します
+WSL コマンドラインを開いて`code .`と入力します
 
 ![wsl-open-vs-code](/img/share/vscode-installation/wsl-open-vs-code.gif)
 
-### VSCodeからWSLを開く
+### VSCode から WSL を開く
 
-VSCodeでコマンドパレットを表示するショートカット`CTRL+SHIFT+P`を使用して、`REMOTE-WSL:`と入力してください
+VSCode でコマンドパレットを表示するショートカット`CTRL+SHIFT+P`を使用して、`REMOTE-WSL:`と入力してください
 
 「Remote-WSL: New Window」という項目を選択すると開くことができます
 
