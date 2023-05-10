@@ -16,7 +16,7 @@ function main() {
 main()
 ```
 
-対して、ある処理をした時にその処理の完了を待たずに次の処理へ進んでいくようなものを非同期処理と呼びます。
+対して、ある処理をした時にその処理の完了を待たずに次の処理へ進んでいくようなものを非同期処理と呼び、非同期の関数を非同期関数などと呼びます。
 
 非同期関数の例としては、setTimeoutという関数があります。これは第一引数に渡した関数を、第二引数に渡したミリ秒後に実行する関数です。
 
@@ -49,6 +49,72 @@ main()
 
 ## 非同期関数
 
-ここまで非同期処理がどのようなものかについて学びましたが、では実際どうやってこれらを扱うのでしょうか？
+JavaScriptには非同期を簡単に扱うために非同期関数(asynchronous function)と呼ばれるものがあります。
+それは以下のように宣言することができます。
 
+```javascript
+async function 関数名(引数名) {
+  // 処理内容
+}
 
+// アロー関数でも大丈夫
+const 関数名 = async (引数名) {
+  // 処理内容
+}
+```
+
+なんだかこれまでみてきた関数の宣言と同じように見えますが、唯一違いとして`async`がくっついていますね。
+
+では試しに非同期関数を使ってみましょう。
+
+<iframe
+  src="https://stackblitz.com/edit/js-4egf2f?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="300px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+...Promiseって誰でしょうか？  
+我々はおそらく11という結果を期待したはずですが、なんか知らない奴が返ってきました。
+
+### Promise
+
+最初の例でsetTimeOutという関数を実行した時、プログラムはsetTimeOutの完了を待たずに次の処理を実行しました。
+しかしこの表現は正確ではなく、setTimeOutなどの**非同期関数はPromiseと呼ばれる特殊なオブジェクトを返します**。
+これにより、setTimeOut関数自体は完了しているため次の処理へと進むことができるのです。
+
+「？？？じゃあsetTimeOutに渡した関数はどうなっちゃったの？」  
+「？？？結局Promiseって何者なの？」
+
+これを説明するとおそらくみんなも僕も頭がおかしくなるので割愛します。
+
+大事なのは、非同期関数の呼び出し結果はPromiseであり、たとえただの足し算であってもその結果が返ってくることはないということです。
+
+### await
+
+では、私たちはどうやって非同期関数の本当の結果を受け取ったらいいのでしょうか？  
+今のところ`addAsync`関数はPromiseとかいうよくわからないモノを返すただのゴミでしかありません。
+
+addAsync関数がゴミではなくなる方法はいくつかありますが、ここでは一番理解しやすいであろう`await`というものについて説明します。
+
+まずは`await`を使ったプログラムを見てみましょう。
+
+<iframe
+  src="https://stackblitz.com/edit/js-hcl1kj?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="300px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+やりました！確かに11という結果が取れています！
+
+このように、非同期関数の呼び出しに`await`をつけると（正確には非同期関数の結果であるPromiseにawaitをつけると）、
+そこでPromiseが実際の結果へと解決されるまで待つことができます。
+
+しかし若干様子がおかしいですね。先ほどまで普通にconsole.log()をしていたのに、今回は`async function`の中で実行しています。
+感のいい人は気づいたかもしれませんが、`await`は`async function`の中でしか使うことができません。
+ただしそのことにだけ注意すれば、非同期関数も普段と同じ感覚でプログラムすることができます。
