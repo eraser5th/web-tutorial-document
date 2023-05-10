@@ -79,3 +79,44 @@ VSCode を開いてみて、以下のような画面になれば OK です 🎉
 拡張機能は今インストールしてもらったもの以外にもたくさんあります
 
 色んな拡張機能をインストールして、自分好みのエディタを作りましょう!
+
+### Windowsの人向け拡張機能
+
+Windowsの人はWSLを使って作業することが多くなると思います  
+そのため、「Remote Development」をインストールしましょう  
+↓のような見た目のやつです
+
+![remote-development](/img/share/vscode-installation/remote-development.png)
+
+より詳細な説明が気になる人は以下の公式ドキュメントを参照してください
+
+- [Linux 用 Windows サブシステムで Visual Studio Code の使用を開始する](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode)
+
+これでWSLを使っての開発がよりスムーズになります👏
+
+## VSCodeを使ってWSLで作業を行う方法
+
+実際にWSLで作業をする方法も紹介します
+
+これも以下の公式ドキュメントに詳細な情報が書かれているので、気になる人は参照してください
+
+- [Visual Studio Code で WSL プロジェクトを開く](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode#open-a-wsl-project-in-visual-studio-code)
+
+WSLでVSCodeを開く方法は2通りあるので順に紹介していきます
+
+- WSLコマンドラインからVSCodeを開く
+- VSCodeからWSLを開く
+
+### WSLコマンドラインからVSCodeを開く
+
+WSLコマンドラインを開いて`code .`と入力します
+
+![wsl-open-vs-code](/img/share/vscode-installation/wsl-open-vs-code.gif)
+
+### VSCodeからWSLを開く
+
+VSCodeでコマンドパレットを表示するショートカット`CTRL+SHIFT+P`を使用して、`REMOTE-WSL:`と入力してください
+
+「Remote-WSL: New Window」という項目を選択すると開くことができます
+
+![vscode-remote-command-palette](/img/share/vscode-installation/vscode-remote-command-palette.png)
