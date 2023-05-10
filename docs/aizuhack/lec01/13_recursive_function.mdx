@@ -40,14 +40,16 @@ function a(n) {
 </TabItem>
 
 <TabItem value="answor" label="解答">
-<iframe
-  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
-  width="100%"
-  height="300px"
-  title="stupefied-sutherland-jdtqvf"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+
+```javascript
+function factorial(x) {
+  if (x === 1) {
+    return 1
+  } else {
+    return x * factorial(x - 1)
+  }
+}
+```
 </TabItem>
 
 </Tabs>
@@ -71,14 +73,18 @@ $$
 </TabItem>
 
 <TabItem value="answor" label="解答">
-<iframe
-  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
-  width="100%"
-  height="300px"
-  title="stupefied-sutherland-jdtqvf"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+
+```javascript
+function fibonacci(x) {
+  if (x === 0) {
+    return 0
+  }
+  if (x === 1) {
+    return 1
+  }
+  return fibonacci(x - 1) + fibonacci(x - 2)
+}
+```
 </TabItem>
 </Tabs>
 
@@ -94,22 +100,16 @@ a と b の最大公約数は、a を bで割った余りをrとして b と r �
 </TabItem>
 
 <TabItem value="answor" label="解答">
-<iframe
-  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
-  width="100%"
-  height="300px"
-  title="stupefied-sutherland-jdtqvf"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+
+```javascript
+function euclideanAlgorithm(a, b) {
+  if (a % b === 0) {
+    return b;
+  } else {
+    return euclideanAlgorithm(b, a % b);
+  }
+}
+```
+
 </TabItem>
 </Tabs>
-
-<iframe
-  src="https://stackblitz.com/edit/js-x6vgkc?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
-  width="100%"
-  height="500px"
-  title="stupefied-sutherland-jdtqvf"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>

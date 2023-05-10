@@ -2,34 +2,31 @@
 
 オブジェクトとは、関連するデータや機能をひとまとめにするためのものです。
 
-例えば、自分の性、名、誕生日、をプログラム上で表現する時、これまでであれば以下のようにするしかない。
+例えば、自分の性・名・誕生日をプログラム上で表現する時、これまでであれば以下のようにするしかない。
 
-```javascript
-let lastName = "Kato"
-let firstName = "Takeshi"
-let birthday = "09/13"
-
-console.log(lastName)
-console.log(firstName)
-console.log(birthday)
-```
+<iframe
+  src="https://stackblitz.com/edit/js-nc919q?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 しかしこれらはそれぞれがそれぞれの変数に格納されており、バラバラに扱う必要がある。  
 ここでオブジェクトを使うと、以下のように一つの値として扱うことができる。
 
-```javascript
-let myProfile = {
-  lastName: "Kato",
-  firstName: "Takeshi",
-  birthday: "09/13",
-}
+<iframe
+  src="https://stackblitz.com/edit/js-7qd4up?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="500px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
-console.log(myProfile.lastName)
-console.log(myProfile.firstName)
-console.log(myProfile.birthday)
-```
-
-また、オブジェクトにはメソッドと呼ばれる関数を含めることができる。
+また、オブジェクトにはメソッドと呼ばれる関数を含めることができる。  
+（関数についてはこの次の章でやるのでなんとなくでいいです）
 
 ```javascript
 let myProfile = {
@@ -43,4 +40,3 @@ let myProfile = {
 
 console.log(myProfile.getFullName())
 ```
-
