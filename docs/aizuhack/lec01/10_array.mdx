@@ -51,3 +51,31 @@ console.log(numbers[a])
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+## 配列の長さ
+
+配列には長さというものがある。その長さは`.length`で取り出すことができる。
+
+```javascript
+const nums = [1, 2, 3]
+console.log(nums.length)
+```
+
+これを使うと「配列の長さの分だけfor文を回す」などができる。
+
+```javascript
+const nums = [1, 2, 3, 4, 5]
+for (let i = 0; i < nums.length; i++) {
+  console.log(nums[i])
+}
+```
+
+## 要素の追加
+
+`Array.prototype.push`を使うと要素の追加ができる。
+
+```javascript
+const nums = [1, 2, 3]
+nums.push(4)
+console.log(nums)
+```
