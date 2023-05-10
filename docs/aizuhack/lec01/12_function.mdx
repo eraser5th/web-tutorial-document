@@ -95,18 +95,18 @@ const dist = distance(point1, point2)
 ```
 
 これらはどちらも2つの点の距離を計算するプログラムです。違いとして、上は関数を用いておらず下は関数を用いています。
+その違いによって読む時にこのような違いが現れます。
 
-上の場合、全てのプログラムを読んだ上で何をしているのかを理解する必要があります。
-
-対して下の場合、関数名が`distance`であり二つの引数を受け取ることからその関数が二つの点の距離を計算するものであると**「予想」**ができます。
+- 上の場合、全てのプログラムを読んだ上で何をしているのかを理解する必要があります。
+- 下の場合、関数名が`distance`であり二つの引数を受け取ることから、その関数が二つの点の距離を計算するものであると**「予想」**ができます。
 そして結果としてその「予想」は正しいです。
 
 今回は２点の距離を求めるだけなのでどちらも問題なく読めると思います。
-ですがこれがテイラー展開を用いたsin関数の計算のような、ある程度複雑な計算だとどうでしょうか...?
+ですがこれがマクローリン展開を用いたsin関数の計算のような、ある程度複雑な計算だとどうでしょうか...?
 名前が無いと何をしているかわからなくなることは想像に難くありません。
 
 <details>
-<summary>コラム：テイラー展開を用いたsin関数の定義と実装</summary>
+<summary>コラム：マクローリン展開を用いたsin関数の定義と実装</summary>
 
 - 定義（微積１もしくは２でやります）
 
@@ -116,23 +116,28 @@ $$
 
 - 実装（ChatGPTくんに書いてもらった👅）
 
-基本的にはMath.sinを用いるため自作することはないが、ここでは例として。
-
 ```javascript
 function sin(x) {
   let result = 0
-  for (let i = 0; i < 10; i++) {
-    const sign = (-1) ** i
+  for (let k = 0; k <= 3; i++) {
+    const sign = ((-1) ** i)
     const numerator = x ** (2 * i + 1)
-    let denominator = 1
-    for (let j = 1, j < (2 * i + 1); j++) {
-      denominator *= j
-    }
-    const term = sign * numerator / denominator
-    const result += term
+    const denominator = factorial(2 * k + 1)
+
+    const result += sign * numerator / denominator
+  }
+}
+
+function factorial(x) {
+  if (x === 1) {
+    return 1
+  } else {
+    return x * factorial(x - 1)
   }
 }
 ```
+
+基本的にはMath.sinを用いるため自作することはないし上のsin関数はxの値によっては安全な計算ができない可能性があるが、ここでは複雑な関数の例として挙げてみた。
 
 </details>
 
