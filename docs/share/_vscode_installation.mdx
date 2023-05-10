@@ -1,4 +1,122 @@
-## VSCodeのインストール
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## VisualStudioCode のインストール
+
+VisualStudioCode(VSCode と略されることが多いです)というエディタをインストールします
+
+VSCode は、Windows などを開発した Microsoft 社が開発したツールです  
+ですので、Windows にある WSL などとも相性がよく、色んな機能が揃っています
+
+さっそくダウンロードしてみましょう！  
+以下の公式ダウンロードページのリンクからそれぞれ自分の PC にあったものをダウンロードしてください
+
+- [公式ダウンロードページ](https://code.visualstudio.com/download)
+
+ダウンロードが終わったら、以下の手順に従って進めてください  
+(Windows, Mac ごとにタブで分かれています)
+
+<Tabs>
+
+<TabItem value="windows" label="Windows" default>
+
+Windows の場合、先程のダウンロードページから、インストーラー(VSCodeUserSetup-ia32-1.67.1.exe みたいなやつ)がダウンロードできます
+
+そのインストーラーを実行して、VSCode を実際にインストールします  
+(ダブルクリックなどで実行できます!)
+
+実行していくと、こんなことを聞かれるのでそれぞれ答えていってください  
+(基本的に「次へ」や「OK」を押してって大丈夫だと思います)
+
+- ライセンスに同意する?
+- VSCode はどのフォルダにインストールする?
+- ホーム画面(デスクトップ)にショートカットは作る?
+- など
+
+</TabItem>
+
+<TabItem value="mac" label="Mac">
+
+Mac の場合、先程のダウンロードページから、VSCode-darwin-universal.zip がダウンロードできます
+
+それを解凍して「Visual Studio Code」というアプリケーションを実行してください  
+(ダブルクリックなどで実行できます!)
+
+以下のような画面が出たら「開く」を押してください
+
+![mac-confirmation](/img/share/vscode-installation/mac-confirmation.png)
+
+</TabItem>
+
+</Tabs>
+
+---
+
+VSCode を開いてみて、以下のような画面になれば OK です 🎉
+
+![opened](/img/share/vscode-installation/opened.png)
 
 ## 拡張機能のインストール
 
+次に、拡張機能を VSCode に入れてみます
+
+拡張機能とは、文字通り VSCode の機能を拡張するもので、左側の四角がいくつかあるアイコンから入手できます
+
+では、日本語にする拡張機能を入れてみましょう
+
+左端のメニューから![extension-icon](/img/share/vscode-installation/extension-icon.png) (Extensions)を選択します
+
+検索欄に `japan` と入力します
+
+![search-extension](/img/share/vscode-installation/search-extension.png)
+
+「Japanese Language Pack」を選択して、「Install」ボタンを押します
+
+![japanese-language-pack](/img/share/vscode-installation/japanese-language-pack.png)
+
+その後、VSCode を再起動して実際に日本語になっていれば OK です 🎉
+
+拡張機能は今インストールしてもらったもの以外にもたくさんあります
+
+色んな拡張機能をインストールして、自分好みのエディタを作りましょう!
+
+### Windows の人向け拡張機能
+
+Windows の人は WSL を使って作業することが多くなると思います  
+そのため、「Remote Development」をインストールしましょう  
+↓ のような見た目のやつです
+
+![remote-development](/img/share/vscode-installation/remote-development.png)
+
+より詳細な説明が気になる人は以下の公式ドキュメントを参照してください
+
+- [Linux 用 Windows サブシステムで Visual Studio Code の使用を開始する](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode)
+
+これで WSL を使っての開発がよりスムーズになります 👏
+
+## VSCode を使って WSL で作業を行う方法
+
+実際に WSL で作業をする方法も紹介します
+
+これも以下の公式ドキュメントに詳細な情報が書かれているので、気になる人は参照してください
+
+- [Visual Studio Code で WSL プロジェクトを開く](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode#open-a-wsl-project-in-visual-studio-code)
+
+WSL で VSCode を開く方法は 2 通りあるので順に紹介していきます
+
+- WSL コマンドラインから VSCode を開く
+- VSCode から WSL を開く
+
+### WSL コマンドラインから VSCode を開く
+
+WSL コマンドラインを開いて`code .`と入力します
+
+![wsl-open-vs-code](/img/share/vscode-installation/wsl-open-vs-code.gif)
+
+### VSCode から WSL を開く
+
+VSCode でコマンドパレットを表示するショートカット`CTRL+SHIFT+P`を使用して、`REMOTE-WSL:`と入力してください
+
+「Remote-WSL: New Window」という項目を選択すると開くことができます
+
+![vscode-remote-command-palette](/img/share/vscode-installation/vscode-remote-command-palette.png)
