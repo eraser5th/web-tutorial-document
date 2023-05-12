@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ---
 ---
 
@@ -312,45 +315,76 @@ function f(x) {
 余裕のある方は、いろいろな関数の書き方でやってみよう。
 :::
 
-### 問題５ `MinFunc`
+### 問題1 `min`
 
+<Tabs>
+<TabItem value="summary" label="問題">
 引数に数値を二つ取り、その二つのうち小さい方を返す関数を作成しなさい。
 
-[回答例](https://github.com/eraser5th/AizuHack-Web/tree/master/lec1/ex05_MinFunc/MinFunc.js)
+</TabItem>
+
+<TabItem value="answor" label="解答例１">
 
 ```javascript
-function test(f) {
-  console.log('(1, 2) => 期待される値: 1, 結果: ' + f(1, 2))
-  console.log('(9, -5) => 期待される値: -5, 結果: ' + f(9, -5))
-  console.log('(3, 18) => 期待される値: 3, 結果: ' + f(3, 18))
-  console.log('(-12, -6) => 期待される値: -12, 結果: ' + f(-12, -6))
+function min(a, b) {
+  if (a < b === 0) {
+    return a;
+  } else {
+    return b;
+  }
 }
-
-// この下に関数を作成。
-
-test(/* 作成した関数を渡す */)
 ```
 
-### 問題6 `HelloWorld_n_times`
+</TabItem>
+<TabItem value="answor" label="回答例２">
 
+```javascript
+const min = (a, b) => a < b ? a : b
+```
+
+これについて気になる人は聞いてみよう！
+
+</TabItem>
+</Tabs>
+
+### 問題2 `helloWorldNTimes`
+
+<Tabs>
+<TabItem value="summary" label="問題">
 引数に正の整数値を取り、その回数だけ`Hello World!`と出力する関数を作成しなさい。
 
-[回答例](https://github.com/eraser5th/AizuHack-Web/tree/master/lec1/ex06_HelloWorld_n-times/HelloWorld_n_times.js)
+</TabItem>
+<TabItem value="answor" label="解答例１">
 
 ```javascript
-function test(f) {
-  console.log(1)
-  f(1)
-  console.log(8)
-  f(8)
+function helloWorldNTimes(n) {
+  for (let i = 0; i < n; i++) {
+    console.log("Hello World!")
+  }
 }
-
-// この下に関数を作成。
-
-test(/* 作成した関数を渡す */)
 ```
 
-### 問題7 `ArrayMinFunc`
+</TabItem>
+<TabItem value="answor" label="回答例２">
+
+```javascript
+const helloWorldNTimes = (n) => {
+  new Array(n).fill(0).forEach(() => {
+    console.log("Hello World!")
+  })
+}
+```
+
+これについて気になる人は聞いてみよう！
+
+</TabItem>
+</Tabs>
+
+### 問題3 `arrayMin`
+
+
+<Tabs>
+<TabItem value="summary" label="問題">
 
 引数に数値の配列を取り、配列内の最小の数値を返す関数を作成しなさい。
 
@@ -358,17 +392,29 @@ test(/* 作成した関数を渡す */)
 配列の長さは、`配列.length`で取得できる。
 :::
 
+</TabItem>
+<TabItem value="answor" label="解答例１">
+
 ```javascript
-function test(f) {
-  console.log([1, 2, 3, 4, 5], '=> 期待される値:', 1,'結果:', f([1, 2, 3, 4, 5]))
-  console.log([3, 10, -5], '=> 期待される値:', -5, '結果:', f([3, 10, -5]))
-  console.log([1], '=> 期待される値:', 1, '結果:', f([1]))
+function arrayMin(a) {
+  let min = a[0]
+  for (let i = 1; i < a.length; i++) {
+    if (a[i] < min) {
+      min = a[i]
+    }
+  }
+  return min;
 }
-
-// この下に関数を作成。
-
-test(/* 作成した関数を渡す */)
 ```
 
-- [回答例１](https://github.com/eraser5th/AizuHack-Web/blob/master/lec1/ex07_ArrayMinFunc/ArrayMinFunc_ansor1.js) （先程のやつを関数にしただけ）
-- [回答例２](https://github.com/eraser5th/AizuHack-Web/blob/master/lec1/ex07_ArrayMinFunc/ArrayMinFunc_ansor2.js) （[array.reduce](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)を使ったもの）
+</TabItem>
+<TabItem value="answor" label="回答例２">
+
+```javascript
+const arrayMin = (a) => a.reduce((a, b) => a < b ? a : b, a[0])
+```
+
+これについて気になる人は聞いてみよう！
+
+</TabItem>
+</Tabs>
