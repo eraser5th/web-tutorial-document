@@ -1,8 +1,8 @@
 {
   "position": 3,
-  "label": "第1回 JavaScript 🚧",
+  "label": "第1回 JavaScript",
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",

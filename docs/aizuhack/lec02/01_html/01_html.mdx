@@ -1,0 +1,122 @@
+# HTML 📃
+
+まずはHTMLについて説明します。内容としては、
+
+- HTMLの構造
+- 基本的なタグについて
+- classとid
+
+### HTMLの構造
+
+以下にHTMLのおおよそ最小構成を載せます。
+
+様々なタグと呼ばれるものを階層的に記述することにより、文書構造を表現する。
+
+```htmlembedded=
+<!DOCTYPE html>
+<html>
+  <!-- <head> 内ではWebページの表示名、ロゴ、CSSの読み込みなど、設定の様なことを行う -->
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <!-- <body> 内ではWebページの構造、コンテンツを表記する -->
+  <body>
+    <h1>this is a lv.1 heading</h1>
+  </body>
+</html>
+```
+
+### HTMLのコメント
+
+先程のHTMLに`<!-- このような -->`ものがあったと思います。これはHTMLにおけるコメントであり、見た目や動作に影響を与えません。
+
+### 基本的な`tag`
+
+HTMLには様々な`tag`と呼ばれるものがある。
+
+ここではその中でも重要または基本的なものを取り上げる。
+
+#### `heading` （見出し）
+
+見出しは`<h1>` ~ `<h6>`の６つがある。 [詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
+
+<iframe height="400" width="100%" width="100%" scrolling="no" title="Untitled" src="https://codepen.io/eraser5th/embed/RwQPRQQ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/RwQPRQQ">
+  Untitled</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### `image` （画像）
+
+画像は`<img>`タグを使うことによって表示できる。画像のURLは`src`属性に渡す。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+
+<iframe height="400" width="100%" width="100%" scrolling="no" title="AizuHack_HTML・CSS_image_example" src="https://codepen.io/eraser5th/embed/vYdOKwr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/vYdOKwr">
+  AizuHack_HTML・CSS_image_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### `paragraph` （段落）
+
+段落は`<p>`タグを使う。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
+
+<iframe height="400" width="100%" scrolling="no" title="HTML paragraph" src="https://codepen.io/eraser5th/embed/QWQbKWW?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/QWQbKWW">
+  HTML paragraph</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### `anchor` (リンク)
+
+リンクは`<a>`タグを使う。リンク先は`href`属性に渡す。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_anchor_example" src="https://codepen.io/eraser5th/embed/abqOmBV?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/abqOmBV">
+  AizuHack_HTML・CSS_anchor_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### `button` （ボタン）
+
+ボタンは`<button>`タグを使う。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_button_example" src="https://codepen.io/eraser5th/embed/rNJVMpz?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/rNJVMpz">
+  AizuHack_HTML・CSS_button_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### `input` （インプット）
+
+ユーザーからの入力は`<input>`タグを使う。`type`属性を変えることで様々な入力に対応できる。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_input_example" src="https://codepen.io/eraser5th/embed/MWQwjqo?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/MWQwjqo">
+  AizuHack_HTML・CSS_input_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### `division` (区間)
+
+ある区間Aと区間Bに分けたり、ページを階層構造にするためなどに使う。[詳細](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
+
+classについてはこの後説明します。
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_div_example" src="https://codepen.io/eraser5th/embed/jOZPVNm?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/jOZPVNm">
+  AizuHack_HTML・CSS_div_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### class と id
+
+HTML要素には`class`と`id`と呼ばれる属性がある。`class`は複数付与することが可能で、`id`は一つだけしか付与できない。
+
+`class`と`id`はCSSで装飾する要素を指定したり、JavaScriptから要素を取得するのに必要。
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_class-id_example" src="https://codepen.io/eraser5th/embed/eYVNxBr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/eYVNxBr">
+  AizuHack_HTML・CSS_class-id_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

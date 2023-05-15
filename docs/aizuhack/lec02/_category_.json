@@ -1,0 +1,11 @@
+{
+  "position": 4,
+  "label": "第二回 HTML・CSS・DOM",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Webコース第二回勉強会"
+  }
+}

@@ -2,7 +2,7 @@
   "position": 100,
   "label": "補足資料",
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
