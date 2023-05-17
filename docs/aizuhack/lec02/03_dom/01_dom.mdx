@@ -1,102 +1,28 @@
 # DOM
 
----
-
-## 今回の目的
-
-前回のHTML・CSS勉強会により、簡易的なWebページの作成は可能になった。しかしあれだけではWebアプリケーションとしての*"機能"*が作成できない。よって今回はDOMと呼ばれるものを学ぶことにより、基礎的なWebアプリケーションの作成ができる様になっていただきます。
-
----
-
-## まずはJavaScriptの復習から
-
-第一回の資料をざっとおさらいしよう！
-
-- [ドキュメント形式](https://hackmd.io/wOmDxIn2SeigrJmLcO2NyA)
-- [スライド形式](https://hackmd.io/@ERASER/HyQhPHKH9)
-
----
-
 ## DOM（Document Object Model）とは？
 
-DOMは、ウェブページとプログラミング言語（今回であればJavaScript）を接続するものです。これによりJavaScriptなどからHTML要素などを操作することができます。
+ドキュメントオブジェクトモデル (Document Object Model, DOM) は、
+ウェブ上の文書のコンテンツと構造からなるオブジェクトのデータ表現です。
+([MDN](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model/Introduction)より)
 
----
+HTMLで作成されたWebページなどを開く時、ブラウザでは以下のようなことをしている。
 
-## 試してみよう
+1. URLの先からHTMLファイルを取得する
+2. 取得したHTMLファイルをDOMに変換する
+3. 変換されたDOMをブラウザに描画する
 
-1. ブラウザで https://codepen.io/eraser5th/pen/zYRMVJm にアクセス
+ここでは簡単に、HTMLファイルをブラウザやプログラム（JavaScript）などが
+扱いやすいように変換したモノをDOMと思ってもらえれば良い。
 
-1. 開発者ツールでコンソールを開く
+そして今言ったように、DOMはDOM APIと呼ばれるものを使ってJavaScriptから操作することができる。  
+ここではその方法について軽く紹介する。
 
-1. 左下の JavaScript を記述するところで以下のようなものを試してみる
+## DOM API
 
-1. 以下を記述
+### `document.getElementsByTagName`
 
-```javascript=
-const pElements = document.getElementsByTagName("p")
-console.log(pElements)
-```
-
-すると、`console.log` をした結果が開発者ツールのコンソール上に表示される
-
-
-
-ブラウザで https://sccp2021.github.io/html_learn/ にアクセス
-
-開発者ツールでコンソールを開く
-
-以下を実行
-
-```javascript=
-document.getElementById("main")
-document.getElementById("greeting")
-document.getElementsByClassName("content")
-document.getElementsByTagName("div")
-let greeting = document.getElementById("greeting")
-greeting.textContent = "I'm mayamito."
-```
--->
-
----
-
-## 今回使用するDOMインターフェースの紹介
-
-DOMはDOMインターフェースと呼ばれるものを通して操作することができます。  
-つまり、これから我々は「DOMインターフェースを使ってDOMを操作することによりHTML要素を操作する」方法を学びます。  
-そのためにまずはどの様なDOMインターフェースが存在するのかを紹介します。
-
----
-
-### `Document`
-
-読み込まれたWebページ全体の情報を扱うオブジェクト。  
-このオブジェクトを操作することによりWebページを操作したり、HTML要素などを生成したりすることができます。  
-JavaScript には`document`というグローバルオブジェクトが元々作られています。(クライアントサイド JavaScript が起動するタイミングで自動的に生成されます)
-
-[詳細](https://developer.mozilla.org/ja/docs/Web/API/Document)
-
----
-
-### `Element`
-
-`Document`内部（すなわちWebページの中）にある要素は全て`Element`というオブジェクト（もしくはその派生）です。  
-例えばHTML要素は全て`Element`の派生である`HTMLElement`（の派生）です。
-
----
-
-### `Event`
-
-`Event`はDOMで発生するイベントを表すオブジェクトです。  
-イベントの例としてはクリック、キーボードの入力などが挙げられる。
-
----
-
-## `Document`の詳細
-
-Documentの主な機能と使い方を説明します。
-
----
+### `document.getElementsByTagName`
 
 ### `Document.createElement()`
 
