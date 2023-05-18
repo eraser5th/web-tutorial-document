@@ -1,0 +1,197 @@
+# DOM API
+
+ここで紹介するDOM APIとは、JavaScriptからDOMを操作するためのものです。
+DOM APIを用いて、DOM要素の取得・作成・追加などを行いうことができます。
+
+## Document
+
+### document.getElementsByTagName
+
+指定したタグの要素をDOMから全て取得します。  
+取得した結果は配列ではなく`HTMLCollection`というオブジェクトであることに注意。
+
+```javascript
+const h1Collection = document.getElementsByTagName("h1")
+console.log(h1Collection)
+```
+
+### document.getElementsByClassName
+
+指定したタグの要素をDOMから全て取得します。  
+取得した結果は配列ではなく`HTMLCollection`というオブジェクトであることに注意。
+
+```javascript
+const hogeCollection = document.getElementsByClassName("hoge")
+console.log(hogeCollection)
+```
+
+### document.getElementById
+
+指定したタグの要素をDOMから**１つ**取得します。
+
+関数名が単数系であることに注意。
+
+idの意味から1つのみ取得することは自明。
+
+```javascript
+const fuga = document.getElementById("fuga")
+console.log(fuga)
+```
+
+### document.createElement
+
+指定したタグのHTML要素を作ります。
+
+```javascript
+const p = document.createElement('p')
+console.log(p)
+```
+
+:::info
+ちなみに、これはただ要素を作成して変数に入れただけなので、
+実際に表示させるには後々紹介する `Element.append()` などと合わせて使う必要があります。
+:::
+
+## `Element`の詳細
+
+Elementの主な機能と使い方を説明します。
+
+### `Element.className`
+
+その要素の`class`が入っている。書き換え可能。
+
+```javascript=
+const divElement = document.createElement('div')
+
+console.log(divElement)
+
+divElement.className = 'bg_red'
+
+console.log(divElement)
+```
+
+---
+
+### `Element.id`
+
+その要素の`id`が入っている。書き換え可能。
+
+```javascript=
+const divElement = document.createElement('div')
+
+console.log(divElement)
+
+divElement.id = 'homeButton'
+
+console.log(divElement)
+```
+
+---
+
+### `Element.children`
+
+その要素の子要素が入っている。書き換えできない。
+
+:::warning
+配列の様な構造ですが、正確には配列ではないので注意が必要。
+:::
+
+```javascript=
+const parent = document.createElement('div')
+parent.append(document.createElement('h1'))
+parent.append(document.createElement('p'))
+
+console.log(parent)
+console.log(parent.children[0])
+```
+
+---
+
+### `Element.textContent`
+
+その要素の持つテキスト（文字列）が入っている。書き換え可能。
+
+```javascript=
+const h1Element = document.createElement('h1')
+
+console.log(h1Element)
+
+h1Element.textContent = 'hello!'
+
+console.log(h1Element)
+```
+
+---
+
+
+### `Element.append()`
+
+自身の子要素のリスト（`children`）に対し引数に渡した`Element`または文字列を末尾追加する。  
+複数一度に`append`することもできる。
+
+```javascript=
+const divElement2 = document.createElement('div')
+
+divElement2.append(
+  document.createElement('h1')
+)
+
+console.log(divElement2)
+
+// 複数こでもOK
+divElement2.append(
+  document.createElement('p'),
+  document.createElement('p'),
+)
+
+console.log(divElement2)
+```
+
+---
+
+### `Element.remove()`
+
+親要素の子リスト(children)から自身を取り除きます。
+
+```javascript=
+const divElement3 = document.createElement('div')
+const h1Element = document.createElement('h1')
+divElement3.append(h1Element)
+
+console.log(divElement3)
+
+h1Element.remove()
+
+console.log(divElement3)
+```
+
+---
+
+### `EventTarget.addEventListener()`
+
+`EventTarget`となっている通り正確には`Element`の機能ではない。ただし`Element`は`EventTarget`の一種なので使うことができる。なのでここで紹介しておく。
+
+イベントの種類と実行させたい関数を渡すことで、その種類のイベントが発生した際にその関数を実行することができる。
+
+```javascript=
+const button = document.getElementById('button')
+
+button.addEventListener('click', function() {
+  alert('hello! I get click event!')
+})
+```
+
+---
+
+### `value`
+
+inputやtextareaなどの一部の`Element`に存在するプロパティ。  
+入力した文字列などが入っている。
+
+```javascript=
+let textarea = document.getElementById("input")
+console.log(textarea.value)
+textarea.value = "aaaaaaaaaaaaaa"
+```
+
+---
