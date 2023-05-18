@@ -1,0 +1,41 @@
+# class と id
+
+HTML要素には`class`と`id`と呼ばれる属性がある。ここではそれぞれについて説明する。
+
+## class
+
+`class`は複数付与することが可能で、`id`は一つだけしか付与できない。
+
+`class`と`id`はCSSで装飾する要素を指定したり、JavaScriptから要素を取得するのに必要。
+
+<iframe height="400" width="100%" scrolling="no" title="AizuHack_HTML・CSS_class-id_example" src="https://codepen.io/eraser5th/embed/eYVNxBr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/eraser5th/pen/eYVNxBr">
+  AizuHack_HTML・CSS_class-id_example</a> by eraser5th (<a href="https://codepen.io/eraser5th">@eraser5th</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+## id
+
+`id`とは、一般的に言えばモノを識別するための番号や文字列を指します。  
+身近なものであれば、学校の学籍番号がそれに当たる。
+
+例えば僕の学籍番号が大学内で指すのは僕のことであり、他の人を指すことはありません。
+
+また一般的に、一つのくくり（学校など）の中で一つのモノが持つidは一つのみです。  
+大学内であれば、複数の学籍番号を持つ人間がいないということと同じです。
+
+これらと同じようにHTMLにおけるidにも以下のルールが存在します。
+
+- `id`は一つの要素に対し一つまでしか付与できない。
+- また、一つのサイトに `id` が同じ要素を持つことはできない。
+
+```html
+<!-- このように複数のidを持つことはできない -->
+<div id="hoge fuga"></div>
+```
+
+```html
+<!-- このように同じidを持つ要素を複数持つことはできない -->
+<div id="hoge"></div>
+<div id="hoge"></div>
+```

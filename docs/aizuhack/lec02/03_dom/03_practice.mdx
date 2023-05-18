@@ -1,0 +1,156 @@
+# 練習問題
+
+いきなり演習にしてしまうと難しいのと、
+いろいろ便利なものを紹介したいので一緒に練習問題をやっていきましょう。
+
+## 準備
+
+### GitHubの登録
+
+[GitHub](https://github.com)に登録します。  
+GitHubのアカウントは今後開発を行なっていく上で必ずと言っていいほど使うので、絶対に忘れないようにしましょう。
+
+![](/img/aizuhack/lec02/github.png)
+
+（なんか前見た時よりカッコよくなった？）
+
+右上の `sign up` を押し登録を進めます。  
+まず登録に使うemailのアドレスを求められるので入力します。  
+この時、学校のメールアドレスで登録してしまうとおそらく卒業後にアカウントが使えなくなってしまうので、
+自分がよく使うメールアドレスを使うと良いです。
+
+![](/img/aizuhack/lec02/github-sign-up.png)
+
+ここから先については各個人で進めてください。
+
+### StackBlitzの登録
+
+[StackBlitz](https://stackblitz.com/)に登録します。  
+右上の `Sign in` を押し `Sign in with GitHub`を押してください。  
+すると登録画面が出てくると思います。
+
+登録したら次のような画面になると思います。
+
+![](/img/aizuhack/lec02/stackblitz.png)
+
+`+ New Project` を押し、`Frontend`タブを選択、その中にある`Static`を選択してください。  
+すると、新しいHTML・CSS・JavaScriptのプロジェクトが作成されます。
+
+![](/img/aizuhack/lec02/stackblitz-new-project.png)
+
+上の`Pure HTML / CSS / JS (forked)`を押すとプロジェクトの名前を変更することができます。  
+今回は`AizuHack/lec02/test`としてみましょう。
+
+左のファイルの中からindex.htmlを開き、中身を以下のHTMLに置き換えてください。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+次にstyle.cssを開き、中身を全て削除してしまってください。
+
+## 問題１ カウンター
+
+カウンターを作ってみよう。  
+今回カウンターには以下の機能を作ります。
+
+- カウントの表示
+- カウントを増やす
+- カウントを減らす
+- カウントをリセットする
+
+完成目標はこんな感じ。
+
+<iframe
+  src="https://stackblitz.com/edit/web-platform-oev8ka?embed=1&file=script.js&hideExplorer=1&hideNavigation=1&view=preview"
+  width="100%"
+  height="200px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+ではやっていきます。
+
+### 手順1. プロジェクトの作成
+
+まず先ほど作成した`StackBlitz`のプロジェクトを開いてください。
+
+次に左上の `Fork` をクリック。  
+するとそのプロジェクトのコピーが作成され、コピーされたプロジェクトの中に入ります。  
+おそらく上のプロジェクト名が`AizuHack/lec02/test(forked)`となっているので、これを
+`AizuHack/lec02/counter`に変更してみましょう。
+
+### 手順2. カウンターの実装
+
+実際にカウンターを作成していきます。
+
+まずindex.htmlファイルを開いてください。
+
+今回は以下の要素が必要
+
+- カウントを表示する場所
+- カウントを増やすボタン
+- カウントを減らすボタン
+- カウントをリセットするボタン
+
+なのでHTMLファイルの`body`の中に以下を追加します。
+
+```html
+<button type="button">+</button>
+<span>0</span>
+<button type="button">-</button>
+<button type="button">reset</button>
+```
+
+そして、これらの要素はDOM APIを用いてJavaScirptで扱う必要があるため、
+取得しやすいようにそれぞれidをつけます。
+
+```html
+<button type="button" id="count-up">+</button>
+<span id="count-display">0</span>
+<button type="button" id="count-down">-</button>
+<button type="button" id="count-reset">reset</button>
+```
+
+HTMLの方はこれで完了。
+
+次にJavaScriptを変更していきます。
+
+まず、JavaScriptファイルの中身を以下で置き換えてください。
+
+```javascript
+function main() {
+}
+
+main();
+```
+
+## 問題2　インプット
+
+ユーザーから文字列を受け取り、ボタンを押したら受け取った文字列を`alert`関数を使って表示する様にしてみよう。
+
+[回答例](https://codepen.io/matumoto1234/pen/MWQZgbw)
+
+## 問題４　flex-box
+
+flex-boxと呼ばれるCSSの大事な要素について勉強しよう。おそらくこの後の課題において大いに役立つはずです。
+これはさまざまなところで使います。なんならこれができれば見た目を作るのに困ることはないと言っても過言ではないでしょう（過言です）
+
+これはflex-boxをちょっとしたゲームの様なもので勉強できるサイト。とりあえず行けるところまでやってみてください。
+
+[https://flexboxfroggy.com/#ja](https://flexboxfroggy.com/#ja)
+
+これが終わってもっと知りたい方は、
+
+[https://web.dev/learn/css/flexbox/](https://web.dev/learn/css/flexbox/)
