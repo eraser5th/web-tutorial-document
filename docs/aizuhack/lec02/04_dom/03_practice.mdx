@@ -1,0 +1,156 @@
+# 練習問題
+
+練習問題は一緒にやっていきます。
+最初にアカウントを作成したStackBlitzを使ってやっていきましょう。
+
+先に終わって余裕のある方はCSSなどをいじって遊んでおくと良いと思います。
+
+## 問題１ カウンター
+
+カウンターを作ってみよう。  
+今回カウンターには以下の機能を作ります。
+
+- カウントの表示
+- カウントを増やす
+- カウントを減らす
+- カウントをリセットする
+
+完成目標はこんな感じ。
+
+<iframe
+  src="https://stackblitz.com/edit/web-platform-oev8ka?embed=1&file=script.js&hideExplorer=1&hideNavigation=1&view=preview"
+  width="100%"
+  height="200px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+ではやっていきます。
+
+### 手順1. プロジェクトの作成
+
+まず先ほど作成した`StackBlitz`のプロジェクトを開いてください。
+
+次に左上の `Fork` をクリック。  
+するとそのプロジェクトのコピーが作成され、コピーされたプロジェクトの中に入ります。  
+おそらく上のプロジェクト名が`AizuHack/lec02/test(forked)`となっているので、これを
+`AizuHack/lec02/counter`に変更してみましょう。
+
+### 手順2. カウンターの実装
+
+実際にカウンターを作成していきます。
+
+まずindex.htmlファイルを開いてください。
+
+今回は以下の要素が必要
+
+- カウントを表示する場所
+- カウントを増やすボタン
+- カウントを減らすボタン
+- カウントをリセットするボタン
+
+なのでHTMLファイルの`body`の中に以下を追加します。
+
+```html
+<button type="button">+</button>
+<span>0</span>
+<button type="button">-</button>
+<button type="button">reset</button>
+```
+
+そして、これらの要素はDOM APIを用いてJavaScirptで扱う必要があるため、
+取得しやすいようにそれぞれidをつけます。
+
+```html
+<button type="button" id="count-up">+</button>
+<span id="count-display">0</span>
+<button type="button" id="count-down">-</button>
+<button type="button" id="count-reset">reset</button>
+```
+
+HTMLの方はこれで完了。
+
+次にJavaScriptを変更していきます。
+
+まず、JavaScriptファイルの中身を以下で置き換えてください。
+
+```javascript
+function main() {
+}
+
+main();
+```
+
+今回はこのmain関数の中身を編集してカウンターの動作を実装していきます。
+
+まずはカウントを保持する変数を作成しましょう。
+また、カウントの表示先を取得しておきましょう。
+
+```javascript
+function main() {
+  let count = 0;
+  const countDisplay = document.getElementById('count-display')
+}
+```
+
+次に、増やす機能を実装しましょう。
+
++ボタンを押したときに増えてほしいので、
+まずは+ボタンをJavaScriptから取得するプログラムを書きましょう。
+
+```javascript
+function main() {
+  // ...
+
+  const countUpButton = document.getElementById('count-up');
+}
+```
+
++ボタンを押したときにcountを1増やし、それを画面に表示します。
+
+```javascript
+function main() {
+  // ...
+
+  const countUpButton = document.getElementById('count-up');
+  countUpButton.addEventListener('click', function () {
+    count += 1;
+    countDisplay.innerText = count;
+  });
+}
+```
+
+ここまでの完成系は以下のような感じです。
+
+```javascript
+function main() {
+  let count = 0;
+  const countDisplay = document.getElementById('count-display')
+
+  const countUpButton = document.getElementById('count-up');
+  countUpButton.addEventListener('click', function () {
+    count += 1;
+    countDisplay.innerText = count;
+  });
+}
+
+main();
+```
+
+ここから先のカウントの減少とリセットは考えてやってみてください。
+
+## 問題2　インプット
+
+ユーザーから文字列を受け取り、ボタンを押したら受け取った文字列を`alert`関数を使って表示する様にしてみよう。
+
+完成系
+
+<iframe
+  src="https://stackblitz.com/edit/web-platform-b1nohm?embed=1&file=script.js&hideExplorer=1&hideNavigation=1&view=preview"
+  width="100%"
+  height="200px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>

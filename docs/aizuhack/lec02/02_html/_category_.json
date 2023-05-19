@@ -1,8 +1,8 @@
 {
-  "label": "DOM",
+  "label": "HTML",
   "collapsible": true,
   "collapsed": false,
   "link": {
-    "type": "generated-index",
+    "type": "generated-index"
   }
 }
