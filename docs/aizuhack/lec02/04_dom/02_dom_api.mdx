@@ -40,7 +40,7 @@ console.log(fuga)
 
 ### document.createElement
 
-指定したタグのHTML要素を作ります。
+指定したタグのHTML要素(後述のElement)を作ります。
 
 ```javascript
 const p = document.createElement('p')
@@ -52,122 +52,29 @@ console.log(p)
 実際に表示させるには後々紹介する `Element.append()` などと合わせて使う必要があります。
 :::
 
-## `Element`の詳細
+## Element
 
 Elementの主な機能と使い方を説明します。
 
-### `Element.className`
-
-その要素の`class`が入っている。書き換え可能。
-
-```javascript=
-const divElement = document.createElement('div')
-
-console.log(divElement)
-
-divElement.className = 'bg_red'
-
-console.log(divElement)
-```
-
----
-
-### `Element.id`
-
-その要素の`id`が入っている。書き換え可能。
-
-```javascript=
-const divElement = document.createElement('div')
-
-console.log(divElement)
-
-divElement.id = 'homeButton'
-
-console.log(divElement)
-```
-
----
-
-### `Element.children`
+### Element.children
 
 その要素の子要素が入っている。書き換えできない。
 
-:::warning
-配列の様な構造ですが、正確には配列ではないので注意が必要。
-:::
+HTMLCollectionという特殊なオブジェクトであり、配列ではないことに注意が必要。
 
-```javascript=
-const parent = document.createElement('div')
-parent.append(document.createElement('h1'))
-parent.append(document.createElement('p'))
-
-console.log(parent)
-console.log(parent.children[0])
-```
-
----
-
-### `Element.textContent`
+### Element.textContent
 
 その要素の持つテキスト（文字列）が入っている。書き換え可能。
 
-```javascript=
-const h1Element = document.createElement('h1')
+### Element.append()
 
-console.log(h1Element)
+自身の子要素のリスト（`children`）に対し引数に渡した`Element`または文字列を末尾追加する。
 
-h1Element.textContent = 'hello!'
+### Element.remove()
 
-console.log(h1Element)
-```
+要素を削除します。
 
----
-
-
-### `Element.append()`
-
-自身の子要素のリスト（`children`）に対し引数に渡した`Element`または文字列を末尾追加する。  
-複数一度に`append`することもできる。
-
-```javascript=
-const divElement2 = document.createElement('div')
-
-divElement2.append(
-  document.createElement('h1')
-)
-
-console.log(divElement2)
-
-// 複数こでもOK
-divElement2.append(
-  document.createElement('p'),
-  document.createElement('p'),
-)
-
-console.log(divElement2)
-```
-
----
-
-### `Element.remove()`
-
-親要素の子リスト(children)から自身を取り除きます。
-
-```javascript=
-const divElement3 = document.createElement('div')
-const h1Element = document.createElement('h1')
-divElement3.append(h1Element)
-
-console.log(divElement3)
-
-h1Element.remove()
-
-console.log(divElement3)
-```
-
----
-
-### `EventTarget.addEventListener()`
+### EventTarget.addEventListener()
 
 `EventTarget`となっている通り正確には`Element`の機能ではない。ただし`Element`は`EventTarget`の一種なので使うことができる。なのでここで紹介しておく。
 
@@ -181,9 +88,7 @@ button.addEventListener('click', function() {
 })
 ```
 
----
-
-### `value`
+### value
 
 inputやtextareaなどの一部の`Element`に存在するプロパティ。  
 入力した文字列などが入っている。
@@ -191,7 +96,4 @@ inputやtextareaなどの一部の`Element`に存在するプロパティ。
 ```javascript=
 let textarea = document.getElementById("input")
 console.log(textarea.value)
-textarea.value = "aaaaaaaaaaaaaa"
 ```
-
----
