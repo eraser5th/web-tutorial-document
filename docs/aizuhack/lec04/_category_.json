@@ -1,0 +1,11 @@
+{
+  "position": 6,
+  "label": "第4回 HTTP API",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Webコース第二回勉強会"
+  }
+}

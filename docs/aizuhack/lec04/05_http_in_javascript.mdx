@@ -1,0 +1,23 @@
+# JavaScriptでHTTP通信を行う
+
+JavaScriptでHTTP通信は`fetch`という関数を使う。
+使い方としては、第一引数に`URL`を文字列で、第二引数にメソッドやヘッダー、ボディなどが入ったオブジェクトを渡す。
+
+```javascript=
+fetch('URL', {　ここに色々な付加情報を加える })
+
+// 付加情報が何もない時は第二引数はなくても良い
+fetch('URL')
+```
+
+また、`fetch` 関数は非同期関数であるため返り値は `Promise` となります。
+なので今回は先ほどと同じように呼び出す際には非同期関数の中で `await` をつけて実行しましょう。
+
+<iframe
+  src="https://stackblitz.com/edit/web-platform-k1ffnl?devToolsHeight=33&embed=1&file=script.js&hideExplorer=1&hideNavigation=1"
+  width="100%"
+  height="300px"
+  title="stupefied-sutherland-jdtqvf"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
