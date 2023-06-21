@@ -1,8 +1,8 @@
 {
   "position": 4,
-  "label": "第二回 HTML・CSS・DOM",
+  "label": "第2回 HTML・CSS・DOM",
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
