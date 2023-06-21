@@ -1,0 +1,57 @@
+# エンドポイントの作成について詳しく
+
+先ほどのプログラムでエンドポイントの作成を以下のようにして行っていた。
+
+```js
+app.get("/", (req, res) => {
+  console.log("'/' にリクエストを受け取りました!")
+
+  res.status(200).send("Hello world!")
+})
+```
+
+第一引数は先ほどのURLの説明にあったパスを表します。
+
+第二引数はリクエストを受け取った際に実行する関数を渡します。
+
+reqにはリクエストを表すオブジェクトが渡されます。
+
+resにはレスポンスを表すオブジェクトが渡されます。  
+`.status()`でステータスコード（デフォルトは200）を設定します。  
+`.send()` で引数に渡した文字列をボディに入れてレスポンスを送信します。
+
+:::info
+メソッドは`app.get`の`get`の部分を変えることで変更できます。
+
+(例)
+- DELETE: app.delete(...)
+- POST: app.post(...)
+:::
+
+## パスパラメータの受け取り
+
+expressではURLの説明で行ったパスパラメータを簡単に扱うことができます。
+
+```js
+app.get("/:userId", (req, res) => {
+  const userId = req.params.userId
+
+  console.log(`${userId} からリクエストを受け取りました！`)
+
+  res.status(200).send("Hello world!")
+})
+```
+
+## リクエストのボディを取り出す
+
+expressでは以下のように`req.body`でリクエストのボディを取り出すことができます。
+
+```js
+app.get("/checkBody", (req, res) => {
+  const body = req.body
+
+  console.log(`リクエストのボディは\n${body}`)
+
+  res.status(200).send("Hello world!")
+})
+```

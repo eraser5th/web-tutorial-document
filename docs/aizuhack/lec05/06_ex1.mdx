@@ -1,0 +1,15 @@
+# 演習
+
+前回やったTODOリストで通信するサーバーを自分で作ってみよう。
+
+追加したタスクは配列でサーバー内に持つようにする。
+
+作成するエンドポイントは以下の三つ。
+
+- TODOの取得
+  - GET http://localhost:3000/todos
+- TODOの追加
+  - POST http://localhost:3000/todos
+  - 送られてきたTODOにidをサーバー側で設定し、保存する
+- TODOの削除
+  - DELETE http://localhost:3000/todos/削除したいID

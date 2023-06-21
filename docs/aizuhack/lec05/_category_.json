@@ -1,11 +1,11 @@
 {
   "position": 6,
-  "label": "第4回 HTTP API",
+  "label": "第5回 Webバックエンド",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Webコース第二回勉強会"
+    "title": "Webコース第5回勉強会"
   }
 }
