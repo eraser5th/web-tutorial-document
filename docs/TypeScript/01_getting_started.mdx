@@ -1,0 +1,146 @@
+# 試してみよう
+
+適当なディレクトリを作成し、VSCodeで開いてください。
+
+:::warn
+Windowsの方は必ずWSLの中にディレクトリを作成し、それを開いてください。
+:::
+
+必ずターミナル上でそのディレクトリに移動しておいてください。
+
+まずVSCode内のターミナルで、そのディレクトリをNode.jsのプロジェクトにします。  
+以下を実行してください。
+
+```sh
+$ npm init -y
+```
+
+次に`TypeScript`をそのプロジェクト内にインストールします。  
+以下を実行してください。
+
+```sh
+$ npm install --save-dev typescript
+```
+
+:::info
+`npm`の`install`サブコマンドにおいて`--save-dev`オプションは、プロジェクトの開発に使うツールをインストールするために使います。
+
+`TypeScript`とは、基本的にそのまま実行するわけではなく、実行前に`JavaScript`へとコンパイルします。
+従って、プロジェクトの開発には使いますが実際に出来上がる（コンパイル後の）コードには`TypeScript`は現れず実行には必要なくなるため、
+このようなものは`--save-dev`をつけることによって`devDependencies`にインストールします。
+
+対して実行時にも必要なライブラリなどについては`--save`オプションをつける、もしくはどちらもつけないことによって`dependencies`へとインストールされます。
+:::
+
+次に、ディレクトリ内に`index.ts`ファイルを作成してください。
+`TypeScript`のプログラムには基本的に`.ts`拡張子をつけます。
+
+作成したら実際に簡単なプログラムを書いてみましょう。
+
+まずはよくある`Hello world!`からやってみましょう。
+
+```ts
+const message = "Hello TypeScript!"
+console.log(message)
+```
+
+まだ特に`JavaScript`と変わったところはありませんが、一応これは歴とした`TypeScript`プログラムです。
+
+ただこの時点では本当にただの`JavaScript`と何ら変わらないため普通に`Node.js`で実行可能です。  
+試しに実行してみましょう。
+
+```sh
+$ node index.ts
+```
+
+では、ちょっと`TypeScript`なコードに変えてみましょう。
+
+```ts
+const message: string = "Hello TypeScript!"
+console.log(message)
+```
+
+変更点は`message`変数の宣言直後にくっついた`: string`です。  
+これは`message`変数が`string`型であることを宣言する`TypeScript`の構文です。
+
+これでもうこのコードはJavaScriptではなくなったので、`node`コマンドでそのまま実行することはできません。
+
+```sh
+$ node index.ts
+/Users/katotake/Workspace/gomi/gomi.ts:1
+const message: string = "Hello TypeScript!"
+      ^^^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at internalCompileFunction (node:internal/vm:73:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1176:20)
+    at Module._compile (node:internal/modules/cjs/loader:1218:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:23:47
+```
+
+こんな感じでエラーになると思います。
+
+## TypeScriptの実行
+
+ではこれをどのようにして実行するのでしょうか？
+
+方法は２つほどありますので紹介します。
+
+### `ts-node`で直接実行
+
+まず一つ目は、`ts-node`と呼ばれる`TypeScript`がそのまま実行できるランタイムを使用することです。
+
+こちらを使って実際に出来上がったプログラムを実行するというのはあまりしませんが、たまにTypeScriptを試しで実行するのにはとても便利です。
+
+#### 使い方
+
+まずはインストールしましょう。
+
+```sh
+$ npm install --save-dev ts-node
+```
+
+そうしたらこれを使ってプログラムを実行します。`Node.js`のプロジェクト内にインストールしたコマンドは`npx`コマンドを用いることで実行可能です。
+
+```sh
+$ npx ts-node index.ts
+```
+
+正常に動いていることが確認できると思います。
+
+### コンパイルして実行
+
+次に二つ目は、`tsc(TypeScript compiler)`というものを用いて`JavaScript`にコンパイル。その後`node`コマンドで実行するという方法です。
+
+基本的にはこちらを使用します。
+
+`tsc`もインストールが必要ですが、`typescript`のインストールがそれであるため、みなさんはすでにインストール済みです。
+
+そうしたら`tsc`を使って早速コンパイル！といきたいのですが、その前に以下のコマンドを実行します。
+
+```sh
+$ npx tsc --init
+```
+
+このコマンドはそのディレクトリに`tsconfig.json`という`TypeScript`の設定ファイルを配置します。
+設定については後々詳しい話をするかもしれませんが、今回は特に触らずこのまま。
+
+では改めてコンパイルを行いましょう。
+
+```sh
+$ npx tsc index.ts
+```
+
+これにてコンパイルは終わりです。`index.js`というファイルが吐き出されているのが確認できると思います。
+
+ではこれを実行してみましょう。
+
+```sh
+$ node index.js
+```
+
+これにてこの章は終わりです。

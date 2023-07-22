@@ -92,6 +92,12 @@ const config = {
             label: "実践的プログラミング",
           },
           {
+            type: "docSidebar",
+            sidebarId: "typeScriptSidebar",
+            position: "left",
+            label: "TypeScript",
+          },
+          {
             href: "https://github.com/eraser5th/web-tutorial-document",
             label: "GitHub",
             position: "right",
