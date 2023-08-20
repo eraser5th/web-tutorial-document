@@ -2,7 +2,7 @@
 
 引数に受け取った値をそのまま返す関数idを作成してください。引数の型は、そうですねぇ、直近でnumberで使う予定なのでnumberにしてみてください。
 
-```typescript!
+```typescript
 function id(x: number): number {
     return x
 }
@@ -10,7 +10,7 @@ function id(x: number): number {
 
 ふむふむ余裕余裕。次にあなたの上司が、「id関数をstringでも使いたい」と駄々を捏ねてきました。あなたはしょうがないなぁと言いながらこの関数に手を加えます。
 
-```typescript!
+```typescript
 function id(x: number | string): number | string {
     return x
 }
@@ -20,7 +20,7 @@ function id(x: number | string): number | string {
 
 それでは困ってしまうので、あなたは天才的な発想によりnumberとstringそれぞれ`stringId`と`numberId`関数を実装することにしました
 
-```typescript!
+```typescript
 function numberId(x: number): number {
     return x
 }
@@ -48,7 +48,7 @@ wikipedia: [ポリモーフィズム](https://ja.wikipedia.org/wiki/%E3%83%9D%E3
 
 こればっかしは見てみないと分かりませんので実際のコードをドン
 
-```typescript!
+```typescript
 function id<T>(x: T): T {
     return x
 }
@@ -62,7 +62,7 @@ function id<T>(x: T): T {
 
 そう、引数として型を指定することができるのです！するとどうでしょう。id関数は１つしか実装していないのに様々な型に対応できています！
 
-```typescript!
+```typescript
 id<string>("aaa") // 結果はstring型
 id<number>(123)// 結果はstring型
 id<{ name: string }>({ name: "eraser" })
@@ -72,7 +72,7 @@ id<{ name: string }>({ name: "eraser" })
 
 もちろんジェネリクスは複数宣言も可能です。以下は第一引数に第二引数の関数を適応する関数applyの実装例です。
 
-```typescript!
+```typescript
 function apply<T, U>(
     a: T,
     f: (x: T) => U
@@ -91,7 +91,7 @@ function apply<T, U>(
 
 プログラムではこの様に書いて上限を指定します。
 
-```typescript!
+```typescript
 // 上限がstringの例
 function a<T extends string>(x: T): T {
     return x
