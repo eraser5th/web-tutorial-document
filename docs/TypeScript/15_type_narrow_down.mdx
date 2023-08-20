@@ -1,0 +1,83 @@
+# 型の絞り込み
+
+TypeScriptには推論による型の絞り込み機能があります。これは以下のような機能です。
+
+```typescript!
+const a: string | number = 1
+
+// aはstringかもしれないしnumberかもしれないのでこのままでは計算できない
+a + 1     // ERROR!
+a + "aaa" // ERROR!
+
+// しかしtypeof演算子を用いて型を確認すれば
+if (typeof a === "string") {
+    // aはstring型とわかる！
+    a + "aaa" // OK!
+} else {
+    // aはnumber型とわかる！
+    a + 1 // OK!
+}
+```
+
+これはトゥルーシーな値とフォルシーな値を絞り込んだりするのにも使える。
+
+```typescript!
+const a: { name: string } | undefined = {
+    name: "eraser"
+}
+
+a.name // ERROR!
+
+// undefinedはフォルシーな値なので
+if (a) {
+    // ifの中に入ったならそうではないとわかる！
+    a.name // OK!
+}
+```
+
+他には、オブジェクト型AとBを明らかに区別することができるような方法があれば、以下のようなことも。
+
+```typescript!
+type A = {
+    __type: "A", // __を付けてるのは僕の好みです
+    hoge: string,
+}
+
+type B = {
+    __type: "B",
+    hoge: number,
+}
+
+const a: A | B = {
+    __type: "A",
+    name: "eraser",
+}
+
+// hogeはstring | number
+a.hoge + "aaa" // ERROR!
+a.hoge + 1     // ERROR!
+
+if (a.__type === "A") {
+    a.hoge + "aaa" // OK!
+} else {
+    a.hoge + 1     // OK!
+}
+```
+
+TypeScriptバージョン4.6からは分割代入にも対応。それより前のバージョンでは型の絞り込みが正常に行えないので注意してください。
+
+- [ドキュメントのリンク](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html#control-flow-analysis-for-destructured-discriminated-unions)
+
+```typescript!
+const { __type, hoge } = a
+
+hoge + "aaa" // ERROR!
+hoge + 1     // ERROR!
+
+if (__type === "A") {
+    hoge + "aaa" // v4.6からはOK、それより前はERROR
+} else {
+    hoge + 1     // 同上
+}
+```
+

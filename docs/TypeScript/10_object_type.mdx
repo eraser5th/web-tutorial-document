@@ -1,0 +1,136 @@
+# オブジェクト型
+
+オブジェクト型の指定はいくつか方法があります。
+
+- object型の指定
+- ビルトインのRecord<K, V>を使用する
+- オブジェクトのリテラル型を使用
+
+まず一つ目のobject型の指定ですが、これまでと同じようにして型指定を行います。
+
+```typescript
+let a: object = {}
+let b: object = {
+    name: "eraser"
+}
+```
+
+但しはっきりいってこの方法はあまり使いません。なぜならobject型はオブジェクト型におけるunknown型だからです。つまり、全てのオブジェクト値を含む集合というわけです。
+
+TODO図
+
+したがってunknown型と同じように、そのままでは値を満足に操作することができません。
+
+```typescript
+let a: object = {
+    name: "eraser"
+}
+
+a.name // ERROR! object型にはnameプロパティは存在しません
+```
+
+一つ飛ばして、「オブジェクトのリテラル型を使用」。これが一番使われる手法です。以下のようにして指定できます。
+
+```typescript
+let a: {
+    name: string
+} = {
+    name: "eraser"
+}
+```
+
+この場合は、「nameというプロパティがstring型であるオブジェクト」の集合（型）を指定し、その要素の一つである値を代入しているわけです。したがって、nameプロパティが存在することはわかってるので以下のようにアクセスが可能となります。
+
+```typescript
+let a: {
+    name: string
+} = {
+    name: "eraser"
+}
+
+a.name // OK!
+```
+
+ここで一つ注意なのですが、TypeScriptのオブジェクト型において、「指定されていないプロパティは存在しない」というわけではありません。あるかもしれないしないかもしれない。あった場合にはその中身はnumber型かもしれないし、string型かもしれないし、はたまたオブジェクト型かもしれません。しかし、型の上ではないものとして指定していのであれば、それにアクセスするのは不正だろうという考えのもとエラーになっているものと思われます。
+
+そして何が言いたいかというと、例えば先ほどの変数aに指定されていた型は「nameプロパティが存在しstring型である全てのオブジェクト集合」であるため、それさえ満たせているのであればいかなるオブジェクトであっても代入可能です。
+
+というのは若干嘘で、それには若干の制限があります。以下のような感じです
+
+```typescript
+// オブジェクトの直接の代入はERROR
+const a: {
+    name: string
+} = {
+    name: "eraser"
+    age: 21
+} // ERROR! 余分なプロパティageが存在する
+```
+
+エラー内容は、
+
+```shell!
+typescript: Type '{ name: string; age: number; }' is not assignable to type '{ name: string; }'.
+  Object literal may only specify known properties, and 'age' does not exist in type '{ name: string; }'. [2322]
+```
+
+対して、これはOKです。
+
+```typescript
+const b: {
+    name: string,
+    age: number
+} = {
+    name: "eraser"
+    age: 21
+}
+
+// 別の変数を通した間接的な代入はOK
+const c: {
+    name: string
+} = b // OK!
+```
+
+まぁ言いたいことはなんとなくわかって、「aにはageなんてプロパティなくてアクセスできないんだからわざわざそんな値を作って代入しても意味ないだろ」、ってことだと思います。例の下側みたいに、別の変数に入っていた値に関しては問題なく代入可能です。
+
+最後に二番目のRecord<K, V>を使った方法です。以下のようにして使います。
+
+```typescript
+const a: Record<string, number> = {
+    hoge: 1,
+    fuga: 100,
+}
+
+a.hoge // OK!
+```
+
+但し若干注意点があって、以下のようなアクセスも許されます。
+
+```typescript
+// a.piyoは存在しないはずなのに
+a.piyo // OK!
+// それも、piyoの値はnumber型として扱われます
+```
+
+なので、これを利用するのは「全てのプロパティが同じ型の値を持つオブジェクト」を宣言する場合です。
+
+```typescript
+const gap: Record<
+    "none" | "sm" | "md" | "lg" | "xl",
+    string,
+> = {
+    none: "0rem",
+    sm: "0.125rem",
+    md: "0.25rem",
+    lg: "0.5rem",
+    xl: "0.75rem",
+}
+```
+
+このように、プロパティ自体が制限のある型の場合にはもちろん制限外のプロパティにはアクセスできません
+
+```typescript
+size.md   // OK!
+size.hoge // ERROR!
+```
+

@@ -1,0 +1,34 @@
+# 関数の型
+
+関数の型は以下のようにして表現できます。
+
+```typescript
+const add: (a: number, b: number) => number = ...
+```
+
+型における引数の名前と、関数の実装における引数の名前は一致する必要はありません。
+
+```typescript
+const add: (a: number, b: number) => number = (n, m) => {
+    return n + m
+}
+```
+
+上記では関数を代入する変数に対して型を指定した。しかし、TypeScriptには型の推論があるため、以下のようにしても同様の型となる。
+
+```typescript
+const add = (n: number, m: number): number => {
+    return a + b
+}
+```
+
+またここまで変数を使った関数宣言をしたが`function`を使った方法でも同様の指定を行う。
+
+```typescript
+function add(n: number, m: number): number => {
+    return a + b
+}
+```
+
+ここで、引数の型を指定しなかった場合、その型は暗黙的に`any`型となるので注意してください。any型に関しては後ほど紹介します。
+
