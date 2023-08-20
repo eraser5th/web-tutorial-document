@@ -2,7 +2,7 @@
 
 TypeScriptには推論による型の絞り込み機能があります。これは以下のような機能です。
 
-```typescript!
+```typescript
 const a: string | number = 1
 
 // aはstringかもしれないしnumberかもしれないのでこのままでは計算できない
@@ -21,7 +21,7 @@ if (typeof a === "string") {
 
 これはトゥルーシーな値とフォルシーな値を絞り込んだりするのにも使える。
 
-```typescript!
+```typescript
 const a: { name: string } | undefined = {
     name: "eraser"
 }
@@ -37,7 +37,7 @@ if (a) {
 
 他には、オブジェクト型AとBを明らかに区別することができるような方法があれば、以下のようなことも。
 
-```typescript!
+```typescript
 type A = {
     __type: "A", // __を付けてるのは僕の好みです
     hoge: string,
@@ -68,7 +68,7 @@ TypeScriptバージョン4.6からは分割代入にも対応。それより前�
 
 - [ドキュメントのリンク](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html#control-flow-analysis-for-destructured-discriminated-unions)
 
-```typescript!
+```typescript
 const { __type, hoge } = a
 
 hoge + "aaa" // ERROR!

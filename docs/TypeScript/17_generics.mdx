@@ -34,8 +34,6 @@ function stringId(x: string): string {
 
 というわけで生まれたのがジェネリクスくん（言語によってはジェネリックとも）。
 
-<img src="https://hackmd.io/_uploads/Byd3dPq33.png" width="200px" />
-
 :::info
 詳しい経緯なんて知らないので、説明しやすく言ってるだけです。ひっ、叩かないでっ
 :::
@@ -87,9 +85,9 @@ function apply<T, U>(
 
 ジェネリクスには上限となる型を指定できます。上限というのは指定できる一番広い集合という意味です。上限を指定されたジェネリクスにはその部分型のみを指定できる様になります。
 
-![](https://hackmd.io/_uploads/HyBQV_qn2.png)
+![](./images/generics_ok.png)
 
-![](https://hackmd.io/_uploads/ry2m4_qnn.png)
+![](./images/generics_error.png)
 
 プログラムではこの様に書いて上限を指定します。
 
