@@ -1,0 +1,52 @@
+# タプル型
+
+タプル型は複数の構成要素からなる組を総称する一般概念であり、順序付けられた対象の並びを表すために用いられる。(from Wikipedia)
+
+全員がわかる（であろう）概念で言えば数学でやったベクトルのこと。ただし中身は数値とは限らないのでそこは頭を柔らかくしてください。後、長さも任意です。
+
+しかしそんなタプルくん。なんとJavaScriptには存在しないものなので、TypeScriptでは配列で代用して表現します。
+つまり長さに制限のある配列の型を定義することによって擬似的にタプル型を表現するわけです。
+
+:::info
+ただし任意長のタプル型も宣言可能。
+:::
+
+```typescript
+const a: [number, number] = [1, 5]       // OK!
+const b: [number, number] = [1, "hello"] // ERROR!
+const b: [number, string] = [1, "hello"] // OK!
+```
+
+この様に、`[]`の中に頭から順に型を記述していくことで表現します。
+
+もちろん指定の長さを超える配列は代入することができません。
+
+```typescript
+const a: [number, number] = [1, 2, 3] // ERROR!
+```
+
+また、中身にアクセスする時にもしっかりと推論が効きます。
+
+```typescript
+const a: [number, string] = [1, "hello"]
+
+const a0: number = a[0] // OK!
+const a1: number = a[1] // ERROR!
+const a2 = a[2]         // ERROR! 2(3)番目の値は存在しない
+```
+
+任意長のタプルはこの様に宣言します。
+
+```typescript
+const a: [number, string, ...number] = [1, "hoge", 3, 5, 7] // OK!
+const a: [number, string, ...number] = [1, "hoge"]          // OK! ３要素目からは「任意長」なので２要素しかなくてもOK
+const a: [number, string, ...number] = [1, "hoge", 3, 5, "fuga"] // ERROR!
+```
+
+注意点としては、最後を任意長にすることはできるが、途中を任意長にすることはできません。
+
+```typescript
+const a: [...number, string] = [1, 2, 3, "hoge"] // ERROR!
+```
+
+この場合は、「肩が合わなくて代入ができないよ」というエラーではなく「この様な型は宣言できないよ」というエラーになります。

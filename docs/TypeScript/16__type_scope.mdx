@@ -1,0 +1,53 @@
+# 型のスコープ
+
+TypeScriptの型の絞り込みにはスコープが存在します。
+
+スコープというのは、有効な範囲のことで、宣言した変数を使える範囲などもスコープと言ったりします。
+
+```typescript
+const a: number | string = 1
+
+if (typeof a === "string") {
+  // この中ではaはstringとして扱える
+}
+
+// しかし一旦外に出ればnumber | stringに戻ってしまう
+```
+
+これが関数で、if文の中でreturnした場合なんかにはこうなります。
+
+```typescript
+function main() {
+  const a: number | string = 1
+
+  if (typeof a === "string") {
+    return
+  }
+
+  // ここではnumber型になります
+}
+```
+
+それと注意したいのが、関数を抜けるとスコープが切れるということです。
+
+```typescript
+function isString(a: unknown): boolean {
+  if (typeof a === "string") {
+    return true
+  } else {
+    return false
+  }
+}
+
+function main() {
+  const a: number | string = 1
+
+  if (isString(a)) {
+    // aは number | string 型のまま
+  } else {
+    // aは number | string 型のまま
+  }
+}
+```
+
+これを実現したい場合には型ガード関数と呼ばれるTypeScriptの機能を使います。それについては別の章でやります。

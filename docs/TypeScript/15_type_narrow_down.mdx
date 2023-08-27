@@ -81,3 +81,20 @@ if (__type === "A") {
 }
 ```
 
+また、switch文を通しての推論も可能。
+
+```typescript
+const a: number | string | boolean = 1
+
+switch (typeof a) {
+    case "number":
+        // aはnumber
+        break
+    case "string":
+        // aはstring
+        break
+    case "boolean":
+        // aはboolean
+        break
+}
+```

@@ -1,1 +1,41 @@
 # 配列型
+
+配列型は以下の様にして表現します。
+
+```typescript
+const a: number[] = [1, 5, 9]
+const b: string[] = ["aaa", "hoge", "hello"]
+```
+
+また以下の様にしても表現可能です。
+
+```typescript
+const a: Array<number> = [1, 5, 9]
+const b: Array<string> = ["aaa", "hoge", "hello"]
+```
+
+一般的には前者が使われることが多いが、型の表現上の優先順位を明確にするために後者を好む人もいる様です。
+これは実際注意が必要なので紹介しておきます。
+
+配列を表す`[]`はユニオン`|`よりも優先されます。
+
+```typescript
+const a: number | string[] = [1, "hoge", 3]           // ERROR!
+const b: number | string[] = 1                        // OK!
+const c: number | string[] = ["aaa", "hoge", "hello"] // OK!
+```
+
+もし`number | string`の配列を表現したいのであればこれにカッコをつけて
+
+```typescript
+const a: (number | string)[] = [1, "hoge", 3]           // OK!
+const b: (number | string)[] = 1                        // ERROR!
+const c: (number | string)[] = ["aaa", "hoge", "hello"] // OK!
+```
+
+これに対し`Array`を使った場合には`<>`の中身がジェネリクスに代入されるだけなので、この様な優先順位の問題は起こりません。
+
+```typescript
+const a: number | Array<string> = 1              // 前者を表現したければこう
+const b: Array<number | string> = [1, "hoge", 3] // 後者を表現したければこう
+```
