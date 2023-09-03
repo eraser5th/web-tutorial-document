@@ -1,0 +1,35 @@
+# typeof型演算子
+
+もともとJavaScriptにはtypeof演算子という、値の型名を取得する演算子が存在します。
+この演算は型を取得するわけではなく型の名前、つまり文字列を取得します。
+
+```typescript
+typeof "hoge"             // "string"
+typeof 1                  // "number"
+typeof { name: "eraser" } // "object"
+```
+
+これはもちろんTypeScriptにおいても利用可能です。
+
+TypeScriptではこれに加え、「型の世界におけるtypeof演算子」が存在します。
+ここでは通常のtypeof演算子と区別するのにtypeof型演算子と呼ぶことにします。
+
+typeof型演算子が取得するのは型の名前などではなく、型そのものです。
+
+```typescript
+const a: number = 1
+
+const b: typeof a = 2 // bはnumber型の変数になる
+type A = typeof a     // Aはnumber型の型エイリアスになる
+```
+
+この様に型アノテーションや、型エイリアスなどの「型の世界」においてtypeofを記述するとそれはtypeof型演算子となり、
+変数などの型を取得することができます。
+
+注意して欲しいのは、これは値から型を取得するものであって型から型を取得するものではありません。
+
+```typescript
+type A = { name: string }
+
+const a: typeof A = { name: "eraser" } // ERROR! 型エラーではなく構文エラー
+```
