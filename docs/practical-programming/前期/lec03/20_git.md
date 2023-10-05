@@ -21,7 +21,7 @@ Git はソースコードの分散型バージョン管理システムです
 
 ちなみに、`git --version`と打ったときに ↓ のようにバージョンが出れば OK です
 
-![git-version](/img/practical-programming/lec03/git-version.png)
+![git-version](/img/practical-programming/first/lec03/git-version.png)
 
 ※WSL で Ubuntu の人は`sudo apt install git`とかでインストールできます（パスワードが求められるので入力する必要あり）
 
@@ -142,7 +142,7 @@ git log
 
 ちなみに、コミットをさらにいくつかしていくと以下のようなログになります
 
-![git-log](/img/practical-programming/lec03/git-log.png)
+![git-log](/img/practical-programming/first/lec03/git-log.png)
 
 ## 演習
 
