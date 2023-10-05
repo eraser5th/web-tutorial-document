@@ -6,7 +6,7 @@
 
 VSCode を開くと以下のような画面になっていると思います
 
-![vscode-open-now](/img/practical-programming/lec02/vscode-open-now.png)
+![vscode-open-now](/img/practical-programming/first/lec02/vscode-open-now.png)
 
 この状態から実際にファイルを編集する手順を説明していきます
 
@@ -14,17 +14,17 @@ VSCode を開くと以下のような画面になっていると思います
 
 左側のファイルアイコンをクリックするとサイドバーが開きます
 
-![vscode-open-sidebar](/img/practical-programming/lec02/vscode-open-sidebar.png)
+![vscode-open-sidebar](/img/practical-programming/first/lec02/vscode-open-sidebar.png)
 
 サイドバーにある「Open Folder」という青いボタンをクリックして、作業したいフォルダ(ディレクトリ)を開きます  
 画像では code_box/example/というフォルダを開いていますが、別途新しくフォルダを作っていただいて大丈夫です
 
-![vscode-open-folder](/img/practical-programming/lec02/vscode-open-folder.png)
+![vscode-open-folder](/img/practical-programming/first/lec02/vscode-open-folder.png)
 
 次に、サイドバーのフォルダ名にマウスを持っていき、アイコンをクリックしてファイルを新規作成します  
 ここでは、index.html というファイルを作ってみましょう
 
-![vscode-make-file](/img/practical-programming/lec02/vscode-make-file.png)
+![vscode-make-file](/img/practical-programming/first/lec02/vscode-make-file.png)
 
 次に以下の内容を index.html 内に記述します  
 (コピペしてもらって大丈夫です)
@@ -47,12 +47,12 @@ VSCode を開くと以下のような画面になっていると思います
 </html>
 ```
 
-![vscode-write-html](/img/practical-programming/lec02/vscode-write-html.png)
+![vscode-write-html](/img/practical-programming/first/lec02/vscode-write-html.png)
 
 ファイルに変更を加えただけで保存はされていないので、左上の File から Save を行います  
 (ctrl+s などのショートカットだったり、自動保存の設定が用いられたりすることが多いです)
 
-![vscode-save-file](/img/practical-programming/lec02/vscode-save-file.png)
+![vscode-save-file](/img/practical-programming/first/lec02/vscode-save-file.png)
 
 ### 拡張機能を入れてみる
 
@@ -60,23 +60,23 @@ VSCode を開くと以下のような画面になっていると思います
 
 拡張機能とは、文字通り VSCode の機能を拡張するもので、左側の四角がいくつかあるアイコンから入手できます
 
-![vscode-open-extensions](/img/practical-programming/lec02/vscode-open-extensions.png)
+![vscode-open-extensions](/img/practical-programming/first/lec02/vscode-open-extensions.png)
 
 実際に、HTML Preview という拡張機能を入れてみましょう  
 検索欄に「HTML Preview」と入力して一番上に出てきたものをインストールします  
 ※非推奨(deprecated)になっていない中で
 
-![vscode-install-html-preview](/img/practical-programming/lec02/vscode-install-html-preview.png)
+![vscode-install-html-preview](/img/practical-programming/first/lec02/vscode-install-html-preview.png)
 
 では、HTML のプレビュー機能を使ってみます  
 先程の HTML ファイルに戻り、右上のアイコンをクリックしてプレビュー画面を開いてみましょう
 
-![vscode-use-html-preview](/img/practical-programming/lec02/vscode-use-html-preview.png)
+![vscode-use-html-preview](/img/practical-programming/first/lec02/vscode-use-html-preview.png)
 
 プレビュー画面を開いた状態で HTML ファイルの`this is a lv.1 heading`の部分を`hello!`に変更してみましょう  
 すると、プレビュー画面の方も変更されたと思います
 
-![vscode-update-html](/img/practical-programming/lec02/vscode-update-html.png)
+![vscode-update-html](/img/practical-programming/first/lec02/vscode-update-html.png)
 
 ### おすすめの拡張機能
 
