@@ -19,6 +19,11 @@
 - `>=`
   - 左の値が右の値より大きいか等しい場合`true`、そうでない場合`false`
 
+:::warning
+JavaScriptの比較演算子には`==`と`!=`が存在するが、基本的にこれらは使わないほうが良い。
+理由や違いについては「[JavaScript 忘れがちな　=== と == の違い](https://qiita.com/PianoScoreJP/items/e43d70ec188c6fed73ed)」などを参照すると良いでしょう。
+:::
+
 <iframe
   src="https://stackblitz.com/edit/js-ghagnn?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
   width="100%"

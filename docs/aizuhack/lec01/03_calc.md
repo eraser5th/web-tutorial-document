@@ -7,8 +7,6 @@
 
 JavaScriptでは`+`, `-`, `*`, `/`で表現する。割り算のあまりは`%`。
 
-`node`で試してみよう
-
 <iframe
   src="https://stackblitz.com/edit/js-7kkt77?devToolsHeight=33&embed=1&file=index.js&hideExplorer=1&hideNavigation=1"
   width="100%"
