@@ -6,6 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
+const BASE_URL = process.env.BASE_URL || "/web-tutorial-document/";
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Webチュートリアル",
@@ -13,7 +15,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   url: "https://eraser5th.github.io",
-  baseUrl: "/web-tutorial-document/",
+  baseUrl: BASE_URL,
 
   organizationName: "eraser5th", // Usually your GitHub org/user name.
   projectName: "web-tutorial-document", // Usually your repo name.
